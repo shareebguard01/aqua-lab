@@ -50,17 +50,17 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-ink-900 py-24 text-mist-50 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-800 via-ink-900 to-ink-900" />
-      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-aqua-400/10 blur-3xl" />
+    <section id="contact" className="relative overflow-hidden bg-ink-900 py-24 text-white sm:py-32 border-t border-zinc-800/60">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
+      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-aqua-400 neon-text">Get In Touch</p>
-          <h2 className="reveal display-head mt-3 text-4xl text-mist-50 sm:text-5xl" data-delay="80">
+          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Get In Touch</p>
+          <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Let's Talk Water
           </h2>
-          <p className="reveal mt-4 text-lg text-mist-100/70" data-delay="160">
+          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
             Questions, bulk orders or a custom label quote — we usually reply within the hour.
           </p>
         </div>
@@ -68,9 +68,9 @@ export function ContactSection() {
         <div className="mt-16 grid gap-8 lg:grid-cols-5">
           {/* WhatsApp + contact info */}
           <div className="reveal lg:col-span-2" data-delay="80">
-            <div className="rounded-4xl border border-aqua-400/30 bg-ink-700/60 p-7 shadow-glass backdrop-blur">
-              <h3 className="text-xl font-extrabold text-mist-50">Chat to us instantly</h3>
-              <p className="mt-2 text-sm text-mist-100/70">Tap a founder below to open WhatsApp.</p>
+            <div className="rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur">
+              <h3 className="text-xl font-extrabold text-white">Chat to us instantly</h3>
+              <p className="mt-2 text-sm text-zinc-400">Tap a founder below to open WhatsApp.</p>
 
               <div className="mt-6 space-y-4">
                 {founders.map((f) => (
@@ -79,29 +79,29 @@ export function ContactSection() {
                     href={whatsappLink(f.phoneRaw, f.message)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 rounded-3xl border border-aqua-400/25 bg-ink-800/60 p-4 transition-all hover:-translate-y-0.5 hover:border-aqua-400/70 hover:shadow-glow"
+                    className="group flex items-center gap-4 rounded-3xl border border-white/15 bg-ink-900/80 p-4 transition-all hover:-translate-y-0.5 hover:border-white/50 hover:shadow-glow"
                   >
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#25D366] text-white shadow-soft transition-transform group-hover:scale-110">
                       <MessageCircle className="h-6 w-6" fill="white" />
                     </span>
                     <div className="min-w-0">
-                      <p className="font-bold text-mist-50">{f.name}</p>
-                      <p className="text-sm text-mist-100/70">{f.role} · {f.phone}</p>
+                      <p className="font-bold text-white">{f.name}</p>
+                      <p className="text-sm text-zinc-400">{f.role} · {f.phone}</p>
                     </div>
                     <span className="ml-auto text-xs font-bold uppercase tracking-wide text-[#25D366]">Chat</span>
                   </a>
                 ))}
               </div>
 
-              <div className="mt-7 space-y-3 border-t border-aqua-400/20 pt-6 text-sm">
-                <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-3 text-mist-100/80 hover:text-aqua-400">
-                  <Mail className="h-5 w-5 text-aqua-400" /> {CONTACTS.email}
+              <div className="mt-7 space-y-3 border-t border-white/10 pt-6 text-sm">
+                <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors">
+                  <Mail className="h-5 w-5 text-white" /> {CONTACTS.email}
                 </a>
-                <p className="flex items-center gap-3 text-mist-100/80">
-                  <Phone className="h-5 w-5 text-aqua-400" /> {CONTACTS.muhammed.phone}
+                <p className="flex items-center gap-3 text-zinc-300">
+                  <Phone className="h-5 w-5 text-white" /> {CONTACTS.muhammed.phone}
                 </p>
-                <p className="flex items-center gap-3 text-mist-100/80">
-                  <MapPin className="h-5 w-5 text-aqua-400" /> {CONTACTS.location}
+                <p className="flex items-center gap-3 text-zinc-300">
+                  <MapPin className="h-5 w-5 text-white" /> {CONTACTS.location}
                 </p>
               </div>
             </div>
@@ -109,12 +109,12 @@ export function ContactSection() {
 
           {/* Enquiry form */}
           <div className="reveal lg:col-span-3" data-delay="160">
-            <div className="rounded-4xl border border-aqua-400/30 bg-ink-700/60 p-7 shadow-glass backdrop-blur sm:p-9">
+            <div className="rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur sm:p-9">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-14 text-center">
-                  <CheckCircle2 className="h-16 w-16 text-aqua-400 neon-glow" />
-                  <h3 className="display-head mt-5 text-3xl text-mist-50">Message Sent!</h3>
-                  <p className="mt-3 max-w-sm text-mist-100/70">
+                  <CheckCircle2 className="h-16 w-16 text-white neon-glow" />
+                  <h3 className="display-head mt-5 text-3xl text-white">Message Sent!</h3>
+                  <p className="mt-3 max-w-sm text-zinc-300">
                     Thanks for reaching out — we'll get back to you shortly. Want a faster reply? Tap one of our WhatsApp contacts.
                   </p>
                   <button
@@ -165,8 +165,8 @@ export function ContactSection() {
                           key={t.value}
                           className={`flex cursor-pointer items-center gap-2.5 rounded-2xl border-2 px-4 py-3 text-sm font-semibold transition-all ${
                             form.enquiry_type === t.value
-                              ? 'border-aqua-400 bg-aqua-400/15 text-aqua-400 shadow-neon'
-                              : 'border-aqua-400/20 text-mist-100/75 hover:border-aqua-400/60'
+                              ? 'border-white bg-white/15 text-white shadow-neon'
+                              : 'border-white/20 text-zinc-300 hover:border-white/50'
                           }`}
                         >
                           <input
@@ -177,7 +177,7 @@ export function ContactSection() {
                             onChange={() => update('enquiry_type', t.value)}
                             className="sr-only"
                           />
-                          <span className={`h-4 w-4 rounded-full border-2 ${form.enquiry_type === t.value ? 'border-aqua-400 bg-aqua-400' : 'border-mist-100/30'}`} />
+                          <span className={`h-4 w-4 rounded-full border-2 ${form.enquiry_type === t.value ? 'border-white bg-white' : 'border-white/30'}`} />
                           {t.label}
                         </label>
                       ))}
@@ -226,8 +226,8 @@ export function ContactSection() {
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-bold uppercase tracking-wide text-mist-100/80">
-        {label}{required && <span className="text-aqua-400"> *</span>}
+      <span className="mb-2 block text-sm font-bold uppercase tracking-wide text-zinc-300">
+        {label}{required && <span className="text-white font-extrabold"> *</span>}
       </span>
       {children}
     </label>

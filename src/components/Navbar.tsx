@@ -25,21 +25,26 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass py-3' : 'bg-transparent py-5'
+        scrolled ? 'glass py-3 border-b border-zinc-800/80 shadow-2xl' : 'bg-transparent py-4'
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#hero" className="flex items-center gap-3 group">
-          <span className="logo-halo relative grid h-11 w-11 place-items-center">
+        <a href="#hero" className="flex items-center gap-3.5 group">
+          <span className="logo-halo relative grid h-14 w-14 shrink-0 place-items-center">
             <img
               src={LOGO}
               alt="AquaLab logo"
-              className="logo-glow h-11 w-11 object-contain transition-transform group-hover:scale-110"
+              className="logo-glow h-14 w-14 object-contain transition-transform group-hover:scale-105"
             />
           </span>
-          <span className="display-head text-2xl text-mist-50">
-            Aqua<span className="text-aqua-gradient">Lab</span>
-          </span>
+          <div className="flex flex-col justify-center">
+            <span className="display-head text-2xl sm:text-3xl text-white tracking-wide">
+              Aqua<span className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">Lab</span>
+            </span>
+            <span className="text-[11px] font-medium tracking-tight text-zinc-400 leading-tight hidden sm:block">
+              Water is the only thing you should taste in water
+            </span>
+          </div>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -47,7 +52,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-mist-100 transition-colors hover:text-aqua-400 hover:neon-text"
+                className="rounded-full px-4 py-2 text-sm font-semibold text-zinc-300 transition-all hover:text-white hover:neon-text"
               >
                 {l.label}
               </a>
@@ -65,7 +70,7 @@ export function Navbar() {
         </div>
 
         <button
-          className="grid h-10 w-10 place-items-center rounded-xl border border-aqua-400/40 text-aqua-400 md:hidden neon-border-soft"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-zinc-700 text-white md:hidden neon-border-soft"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -74,15 +79,20 @@ export function Navbar() {
         </button>
       </nav>
 
+      {/* Mobile tagline banner */}
+      <div className="block sm:hidden px-5 pt-1 text-[11px] text-center font-medium text-zinc-400">
+        Water is the only thing you should taste in water
+      </div>
+
       {/* Mobile drawer */}
       <div className={`md:hidden overflow-hidden transition-all duration-400 ${open ? 'max-h-96' : 'max-h-0'}`}>
-        <ul className="mx-5 mt-3 flex flex-col gap-1 rounded-3xl glass p-4 shadow-glass">
+        <ul className="mx-5 mt-3 flex flex-col gap-1 rounded-3xl glass p-4 shadow-glass border border-zinc-800">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-2xl px-4 py-3 text-base font-semibold text-mist-100 hover:bg-aqua-400/10 hover:text-aqua-400"
+                className="block rounded-2xl px-4 py-3 text-base font-semibold text-zinc-200 hover:bg-white/10 hover:text-white"
               >
                 {l.label}
               </a>

@@ -25,17 +25,17 @@ const products: Product[] = [
 
 export function ProductsSection() {
   return (
-    <section id="products" className="relative overflow-hidden bg-ink-800 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-800 to-ink-900" />
-      <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-aqua-400/10 blur-3xl" />
+    <section id="products" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
+      <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-aqua-400 neon-text">Our Products</p>
-          <h2 className="reveal display-head mt-3 text-4xl text-mist-50 sm:text-5xl" data-delay="80">
+          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Our Products</p>
+          <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Find Your Size
           </h2>
-          <p className="reveal mt-4 text-lg text-mist-100/70" data-delay="160">
+          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
             From pocket-sized still water to office-grade 18L dispensers — plus flavoured and sparkling favourites.
           </p>
         </div>
@@ -44,11 +44,11 @@ export function ProductsSection() {
           {products.map((p, i) => (
             <article
               key={p.name}
-              className="reveal group relative overflow-hidden rounded-4xl border border-aqua-400/30 bg-ink-700/60 p-6 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-aqua-400/70 hover:shadow-glow"
+              className="reveal group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-6 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String((i % 3) * 100)}
             >
               {p.badge && (
-                <span className="absolute right-5 top-5 z-10 rounded-full border border-aqua-400/60 bg-ink-900 px-3 py-1 text-xs font-bold uppercase tracking-wide text-aqua-400 neon-glow">
+                <span className="absolute right-5 top-5 z-10 rounded-full border border-white/40 bg-ink-950 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white neon-glow">
                   {p.badge}
                 </span>
               )}
@@ -71,15 +71,15 @@ export function ProductsSection() {
 
               <div className="mt-2 flex items-center justify-between">
                 <div>
-                  <span className="rounded-full border border-aqua-400/40 bg-aqua-400/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-aqua-400">
+                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
                     {p.tag}
                   </span>
-                  <h3 className="mt-3 text-2xl font-extrabold text-mist-50">{p.name}</h3>
-                  <p className="text-sm font-bold uppercase tracking-wider text-aqua-400">{p.size}</p>
+                  <h3 className="mt-3 text-2xl font-extrabold text-white">{p.name}</h3>
+                  <p className="text-sm font-bold uppercase tracking-wider text-zinc-300">{p.size}</p>
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-mist-100/70">{p.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{p.desc}</p>
 
               <a
                 href={whatsappLink(
@@ -97,11 +97,11 @@ export function ProductsSection() {
           ))}
 
           {/* CTA tile */}
-          <div className="reveal group relative flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-aqua-400/50 bg-gradient-to-br from-ink-700 to-ink-900 p-8 text-center text-mist-50 shadow-glow transition-all duration-500 hover:-translate-y-2" data-delay="200">
-            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-aqua-400/15 blur-2xl" />
-            <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-aqua-400/10 blur-2xl" />
-            <h3 className="relative display-head text-3xl sm:text-4xl">Can't See Your Size?</h3>
-            <p className="relative mt-3 text-mist-100/75">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
+          <div className="reveal group relative flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2" data-delay="200">
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
+            <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
+            <h3 className="relative display-head text-3xl sm:text-4xl text-white">Can't See Your Size?</h3>
+            <p className="relative mt-3 text-zinc-300">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
             <a
               href="#contact"
               className="btn-cyan relative mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-bold uppercase tracking-wide"

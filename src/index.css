@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --neon: #00e5ff;
-  --neon-dim: rgba(0, 229, 255, 0.5);
-  --bg-base: #0a0a0a;
-  --bg-card: #1a1a1a;
-  --text-light: #e0e0e0;
+  --neon: #ffffff;
+  --neon-dim: rgba(255, 255, 255, 0.5);
+  --bg-base: #0a0a0c;
+  --bg-card: #121215;
+  --text-light: #f4f4f5;
 }
 
 * {
@@ -22,14 +22,14 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
+  background-color: #0a0a0c;
+  color: #f4f4f5;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #00e5ff;
-  color: #0a0a0a;
+  background: #ffffff;
+  color: #0a0a0c;
 }
 
 /* Reveal on scroll */
@@ -53,55 +53,56 @@ body {
   letter-spacing: 0.005em;
 }
 
-/* Dark glass card */
+/* Dark obsidian glass card */
 .glass {
-  background: rgba(26, 26, 26, 0.65);
+  background: rgba(18, 18, 21, 0.75);
   backdrop-filter: blur(18px) saturate(120%);
   -webkit-backdrop-filter: blur(18px) saturate(120%);
-  border: 1px solid rgba(0, 229, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-/* Neon text gradient */
-.text-aqua-gradient {
-  background: linear-gradient(120deg, #7df9ff 0%, #00e5ff 50%, #00b8d4 100%);
+/* Neon white text gradient */
+.text-aqua-gradient,
+.text-white-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #e4e4e7 50%, #a1a1aa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Animated gradient ring behind bottles */
+/* Soft pure-white radial glow behind bottle */
 .bottle-glow {
   background: radial-gradient(
-    circle at 50% 45%,
-    rgba(0, 229, 255, 0.35) 0%,
-    rgba(0, 229, 255, 0.12) 40%,
-    rgba(0, 229, 255, 0) 70%
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0) 70%
   );
 }
 
-/* Neon border + glow helpers */
+/* Neon white border + glow helpers */
 .neon-border {
-  border: 1px solid rgba(0, 229, 255, 0.5);
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.25), inset 0 0 8px rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.08);
 }
 .neon-border-soft {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
 }
 .neon-glow {
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 .neon-glow-strong {
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.65), 0 0 40px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.3);
 }
 .neon-text {
-  color: #00e5ff;
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
 
 /* Logo soft glow that follows droplet silhouette */
 .logo-glow {
-  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.6));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 /* Logo backdrop halo — soft circular glow behind logo on dark bg */
@@ -113,34 +114,35 @@ body {
   position: absolute;
   inset: -30% -40%;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.25) 0%, rgba(0, 229, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
   filter: blur(8px);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Button: dark fill + cyan glow border + cyan text */
+/* Button: dark fill + white neon border + white text */
 .btn-neon {
-  border: 1px solid rgba(0, 229, 255, 0.6);
-  background: rgba(0, 229, 255, 0.06);
-  color: #00e5ff;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3), inset 0 0 8px rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.05);
   transition: all 0.25s ease;
 }
 .btn-neon:hover {
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.6), inset 0 0 12px rgba(0, 229, 255, 0.18);
-  background: rgba(0, 229, 255, 0.12);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), inset 0 0 12px rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
 }
 
-/* Button: cyan fill + white glow (primary) */
+/* Button: pure white fill + white glow (primary) */
 .btn-cyan {
-  background: #00e5ff;
-  color: #04161a;
-  box-shadow: 0 0 14px rgba(0, 229, 255, 0.6), 0 0 28px rgba(0, 229, 255, 0.3);
+  background: #ffffff;
+  color: #0a0a0c;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.25);
   transition: all 0.25s ease;
 }
 .btn-cyan:hover {
-  box-shadow: 0 0 22px rgba(0, 229, 255, 0.8), 0 0 44px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 45px rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
 }
 
@@ -149,33 +151,33 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#00e5ff, #00b8d4);
+  background: linear-gradient(#ffffff, #a1a1aa);
   border-radius: 999px;
-  border: 2px solid #0a0a0a;
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+  border: 2px solid #0a0a0c;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Form inputs (dark theme) */
+/* Form inputs (dark obsidian theme) */
 .form-input {
   width: 100%;
   border-radius: 1rem;
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  background: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(18, 18, 21, 0.8);
   padding: 0.85rem 1rem;
   font-size: 0.95rem;
-  color: #e0e0e0;
+  color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .form-input::placeholder {
-  color: rgba(224, 224, 224, 0.35);
+  color: rgba(255, 255, 255, 0.4);
 }
 .form-input:focus {
   outline: none;
-  border-color: #00e5ff;
-  box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.15), 0 0 12px rgba(0, 229, 255, 0.3);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15), 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {

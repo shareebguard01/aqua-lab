@@ -4,30 +4,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Neon-water palette (electric cyan)
+        // Neon-White & Obsidian Black palette
         aqua: {
-          50: '#e6fcff',
-          100: '#b8f7ff',
-          200: '#7df0ff',
-          300: '#3fe9ff',
-          400: '#00e5ff',
-          500: '#00cfe6',
-          600: '#00b8d4',
-          700: '#0093ad',
-          800: '#006d80',
-          900: '#004857',
+          50: '#ffffff',
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#ffffff', // Primary neon white
+          500: '#a1a1aa',
+          600: '#71717a',
+          700: '#3f3f46',
+          800: '#27272a',
+          900: '#18181b',
         },
         ink: {
-          900: '#0a0a0a',
-          800: '#121212',
-          700: '#1a1a1a',
-          600: '#222222',
+          950: '#050505', // Ultra deep obsidian
+          900: '#0a0a0c', // Deep obsidian black
+          800: '#121215', // Dark obsidian card background
+          700: '#18181b', // Obsidian card highlight
+          600: '#27272a', // Obsidian border
         },
         mist: {
-          50: '#f5f5f5',
-          100: '#e0e0e0',
-          200: '#c8c8c8',
-          300: '#9a9a9a',
+          50: '#ffffff',
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#a1a1aa',
         },
       },
       fontFamily: {
@@ -38,10 +39,10 @@ export default {
         tightish: '-0.02em',
       },
       boxShadow: {
-        soft: '0 10px 40px -10px rgba(0, 229, 255, 0.25)',
-        glass: '0 8px 32px rgba(0, 0, 0, 0.45)',
-        glow: '0 0 18px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.25)',
-        neon: '0 0 10px rgba(0, 229, 255, 0.5)',
+        soft: '0 10px 40px -10px rgba(255, 255, 255, 0.25)',
+        glass: '0 8px 32px rgba(0, 0, 0, 0.65)',
+        glow: '0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.15)',
+        neon: '0 0 15px rgba(255, 255, 255, 0.6)',
       },
       borderRadius: {
         '4xl': '2rem',

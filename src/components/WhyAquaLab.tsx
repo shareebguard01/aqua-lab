@@ -25,15 +25,15 @@ const usps = [
 
 export function WhyAquaLab() {
   return (
-    <section className="relative bg-ink-900 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-800 to-ink-900" />
+    <section className="relative bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 to-ink-900" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-aqua-400 neon-text">Why AquaLab</p>
-          <h2 className="reveal display-head mt-3 text-4xl text-mist-50 sm:text-5xl" data-delay="80">
+          <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Why AquaLab</p>
+          <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Purity You Can Trust
           </h2>
-          <p className="reveal mt-4 text-lg text-mist-100/70" data-delay="160">
+          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
             Four promises in every bottle — from source to sip.
           </p>
         </div>
@@ -42,14 +42,14 @@ export function WhyAquaLab() {
           {usps.map((u, i) => (
             <div
               key={u.title}
-              className="reveal group rounded-4xl border border-aqua-400/25 bg-ink-700/60 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-aqua-400/70 hover:shadow-glow"
+              className="reveal group rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String(i * 100)}
             >
-              <span className="grid h-14 w-14 place-items-center rounded-2xl border border-aqua-400/50 bg-aqua-400/10 text-aqua-400 shadow-neon transition-transform group-hover:scale-110">
+              <span className="grid h-14 w-14 place-items-center rounded-2xl border border-white/40 bg-white/10 text-white shadow-neon transition-transform group-hover:scale-110">
                 <u.icon className="h-7 w-7" />
               </span>
-              <h3 className="mt-5 text-xl font-extrabold text-mist-50">{u.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-mist-100/70">{u.desc}</p>
+              <h3 className="mt-5 text-xl font-extrabold text-white">{u.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{u.desc}</p>
             </div>
           ))}
         </div>
