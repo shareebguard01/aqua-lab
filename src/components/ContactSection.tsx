@@ -68,7 +68,7 @@ export function ContactSection() {
         <div className="mt-16 grid gap-8 lg:grid-cols-5">
           {/* WhatsApp + contact info */}
           <div className="reveal lg:col-span-2" data-delay="80">
-            <div className="rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur">
+            <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur">
               <h3 className="text-xl font-extrabold text-white">Chat to us instantly</h3>
               <p className="mt-2 text-sm text-zinc-400">Tap a founder below to open WhatsApp.</p>
 
@@ -109,7 +109,7 @@ export function ContactSection() {
 
           {/* Enquiry form */}
           <div className="reveal lg:col-span-3" data-delay="160">
-            <div className="rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur sm:p-9">
+            <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur sm:p-9">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-14 text-center">
                   <CheckCircle2 className="h-16 w-16 text-white neon-glow" />

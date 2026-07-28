@@ -42,7 +42,7 @@ export function WhyAquaLab() {
           {usps.map((u, i) => (
             <div
               key={u.title}
-              className="reveal group rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String(i * 100)}
             >
               <span className="grid h-14 w-14 place-items-center rounded-2xl border border-white/40 bg-white/10 text-white shadow-neon transition-transform group-hover:scale-110">

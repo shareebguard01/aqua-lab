@@ -28,7 +28,7 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
         {/* Founders card */}
         <div className="reveal relative">
-          <div className="rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glow backdrop-blur">
+          <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glow backdrop-blur">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white neon-text">Founded in Johannesburg</p>
             <h3 className="display-head mt-2 text-3xl text-white sm:text-4xl">Meet The Founders</h3>
 
@@ -76,14 +76,14 @@ export function AboutSection() {
           </p>
 
           <div className="reveal mt-8 grid gap-4 sm:grid-cols-2" data-delay="240">
-            <div className="rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
+            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <Eye className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Vision</h4>
               <p className="mt-1.5 text-sm text-zinc-400">
                 Clean, fresh, accessible water for every South African community.
               </p>
             </div>
-            <div className="rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
+            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <FlaskConical className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Promise</h4>
               <p className="mt-1.5 text-sm text-zinc-400">

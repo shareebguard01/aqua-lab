@@ -29,6 +29,32 @@ export function useScrollReveal() {
     );
 
     els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+
+    // Mobile scroll-driven card activation when cards pass through the viewport center
+    const cardEls = Array.from(document.querySelectorAll<HTMLElement>('.card-interactive'));
+    const mobileCardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            el.classList.add('mobile-active');
+          } else {
+            el.classList.remove('mobile-active');
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: '-20% 0px -20% 0px',
+      }
+    );
+
+    cardEls.forEach((el) => mobileCardObserver.observe(el));
+
+    return () => {
+      observer.disconnect();
+      mobileCardObserver.disconnect();
+    };
   }, []);
 }
+

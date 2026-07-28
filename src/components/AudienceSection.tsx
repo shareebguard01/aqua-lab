@@ -50,7 +50,7 @@ export function AudienceSection() {
           {cards.map((c, i) => (
             <article
               key={c.title}
-              className="reveal group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String(i * 120)}
             >
               {/* corner blob */}

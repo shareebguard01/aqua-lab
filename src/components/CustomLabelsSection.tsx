@@ -1,6 +1,8 @@
 import { Sparkles, ArrowRight, Check } from 'lucide-react';
-import { WaterBottle } from './WaterBottle';
 import { WaveDivider } from './WaveDivider';
+
+// Established date placeholder — easily update this value when finalizing established date
+export const ESTABLISHED_DATE = 'Est. 2026';
 
 const features = [
   'Your logo, names or event artwork on every bottle',
@@ -12,7 +14,7 @@ const features = [
 export function CustomLabelsSection() {
   return (
     <section id="custom-labels" className="relative overflow-hidden bg-ink-900 py-28 text-white sm:py-36 border-t border-zinc-800/60">
-      {/* ambient glow */}
+      {/* ambient background glows */}
       <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-white/5 blur-3xl animate-blob" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-white/5 blur-3xl animate-blob" style={{ animationDelay: '5s' }} />
 
@@ -53,13 +55,13 @@ export function CustomLabelsSection() {
           </a>
         </div>
 
-        {/* Mockup */}
-        <div className="reveal relative flex items-center justify-center" data-delay="200">
-          {/* Soft pure-white radial glow */}
-          <div className="bottle-glow absolute h-[32rem] w-[32rem] rounded-full opacity-80" />
+        {/* Clean Bottle Display with Ambient White Glow */}
+        <div className="reveal card-interactive relative flex items-center justify-center py-4" data-delay="200">
+          {/* Subtle, ambient pure-white radial glow/pulse effect behind high-res bottle */}
+          <div className="bottle-glow-pulse absolute h-[30rem] w-[30rem] rounded-full pointer-events-none sm:h-[36rem] sm:w-[36rem]" />
 
-          {/* floating sample swatches */}
-          <div className="absolute -left-2 top-12 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-floatSlow">
+          {/* Floating sample swatches */}
+          <div className="absolute -left-2 top-8 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-floatSlow z-20">
             <p className="text-xs font-bold uppercase text-white">Sample</p>
             <div className="mt-2 flex gap-1.5">
               <span className="h-6 w-6 rounded-md bg-white neon-glow" />
@@ -67,20 +69,17 @@ export function CustomLabelsSection() {
               <span className="h-6 w-6 rounded-md bg-zinc-300 border border-white/20" />
             </div>
           </div>
-          <div className="absolute -right-3 bottom-20 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-float" style={{ animationDelay: '1.5s' }}>
+          <div className="absolute -right-3 bottom-16 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-float z-20" style={{ animationDelay: '1.5s' }}>
             <p className="text-xs font-bold uppercase text-zinc-400">Your Logo</p>
             <p className="text-sm font-extrabold text-white neon-text">→ Here</p>
           </div>
 
-          <div className="relative z-10 rounded-3xl p-3 border border-white/20 bg-ink-800/40 shadow-glow">
-            <WaterBottle
-              variant="custom"
-              className="h-[26rem] w-auto animate-float drop-shadow-2xl sm:h-[30rem]"
-              label="Your Event"
-              sublabel="Est. 2026"
-              customLabelColor="#ffffff"
-            />
-          </div>
+          {/* High-resolution clean bottle image */}
+          <img
+            src="/aqualab_bottle_clean.png"
+            alt="AquaLab Custom Bottle"
+            className="relative z-10 h-[28rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)] transition-transform duration-700 hover:scale-105 sm:h-[34rem]"
+          />
         </div>
       </div>
 
@@ -88,3 +87,4 @@ export function CustomLabelsSection() {
     </section>
   );
 }
+

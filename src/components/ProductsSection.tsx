@@ -44,7 +44,7 @@ export function ProductsSection() {
           {products.map((p, i) => (
             <article
               key={p.name}
-              className="reveal group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-6 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-6 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String((i % 3) * 100)}
             >
               {p.badge && (
@@ -97,7 +97,7 @@ export function ProductsSection() {
           ))}
 
           {/* CTA tile */}
-          <div className="reveal group relative flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2" data-delay="200">
+          <div className="reveal card-interactive group relative flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2" data-delay="200">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
             <h3 className="relative display-head text-3xl sm:text-4xl text-white">Can't See Your Size?</h3>
