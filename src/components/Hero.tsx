@@ -3,13 +3,13 @@ import { AquaBackground } from './AquaBackground';
 
 export function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-ink-900 pt-32 pb-28 sm:pt-40 sm:pb-36">
+    <section id="hero" className="relative overflow-hidden bg-ink-900 pt-36 pb-36 sm:pt-48 sm:pb-44 my-6 sm:my-16">
       <AquaBackground />
 
       {/* Top gradient wash */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Copy */}
         <div className="relative z-10 text-center lg:text-left">
           <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20">
@@ -22,7 +22,7 @@ export function Hero() {
             Water
           </h1>
 
-          <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 lg:mx-0" data-delay="160">
+          <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-300 lg:mx-0" data-delay="160">
             Pure, sustainably sourced and surprisingly affordable. AquaLab brings
             Johannesburg fresh, lab-tested water — for your home, your office, and your
             biggest celebrations.
@@ -45,7 +45,7 @@ export function Hero() {
           </div>
 
           {/* Trust strip */}
-          <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-zinc-300 lg:justify-start" data-delay="320">
+          <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-slate-300 lg:justify-start" data-delay="320">
             <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-white" /> Lab-Tested Purity</span>
             <span className="inline-flex items-center gap-2"><Leaf className="h-4 w-4 text-white" /> Eco-Friendly Packaging</span>
             <span className="inline-flex items-center gap-2"><Droplet className="h-4 w-4 text-white" fill="currentColor" /> Locally Sourced</span>
@@ -53,25 +53,25 @@ export function Hero() {
         </div>
 
         {/* Hero bottle stage */}
-        <div className="relative flex items-center justify-center py-6">
-          {/* Soft pure-white radial glow directly behind the bottle */}
-          <div className="absolute h-[28rem] w-[28rem] sm:h-[34rem] sm:w-[34rem] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.06)_45%,transparent_70%)] blur-2xl pointer-events-none" />
+        <div className="relative flex items-center justify-center py-10 sm:py-6">
+          {/* Soft ambient pure-white radial glow directly behind the bottle */}
+          <div className="bottle-glow-pulse absolute h-[32rem] w-[32rem] sm:h-[42rem] sm:w-[42rem] rounded-full pointer-events-none" />
 
-          {/* New product bottle asset */}
+          {/* Enlarged bottle asset with prominent drop shadow & glow */}
           <img
             src="/aqualab_bottle_clean.png"
             alt="AquaLab Water Bottle"
-            className="relative z-10 h-[26rem] w-auto object-contain animate-float drop-shadow-[0_15px_35px_rgba(255,255,255,0.18)] sm:h-[32rem]"
+            className="relative z-10 w-[85vw] max-w-[340px] h-auto object-contain animate-float drop-shadow-[0_0_35px_rgba(255,255,255,0.35)] drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)] sm:max-w-none sm:w-auto sm:h-[36rem] lg:h-[42rem]"
           />
 
           {/* floating mini badges */}
           <div className="absolute -left-2 top-10 hidden rounded-2xl glass px-4 py-3 shadow-glass sm:block animate-floatSlow border border-white/20">
             <p className="text-2xl font-extrabold text-white neon-text">100%</p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Potable</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">Potable</p>
           </div>
           <div className="absolute -right-2 bottom-16 hidden rounded-2xl glass px-4 py-3 shadow-glass sm:block animate-float border border-white/20" style={{ animationDelay: '2s' }}>
             <p className="text-2xl font-extrabold text-white neon-text">500ml</p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Still Water</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">Still Water</p>
           </div>
         </div>
       </div>

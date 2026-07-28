@@ -25,7 +25,7 @@ const products: Product[] = [
 
 export function ProductsSection() {
   return (
-    <section id="products" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60">
+    <section id="products" className="relative overflow-hidden bg-ink-900 py-28 sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
@@ -35,16 +35,20 @@ export function ProductsSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Find Your Size
           </h2>
-          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
             From pocket-sized still water to office-grade 18L dispensers — plus flavoured and sparkling favourites.
+          </p>
+          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-400 sm:hidden">
+            ← Swipe to view sizes →
           </p>
         </div>
 
-        <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Horizontal scroll container on mobile, grid layout on tablet/desktop */}
+        <div className="mt-14 flex snap-x snap-mandatory overflow-x-auto gap-5 pb-8 pt-2 no-scrollbar sm:grid sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 sm:overflow-x-visible">
           {products.map((p, i) => (
             <article
               key={p.name}
-              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-6 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow sm:min-w-0 sm:max-w-none sm:shrink-1"
               data-delay={String((i % 3) * 100)}
             >
               {p.badge && (
@@ -54,14 +58,14 @@ export function ProductsSection() {
               )}
 
               {/* Bottle stage */}
-              <div className="relative mx-auto flex h-56 items-center justify-center">
-                <div className="bottle-glow absolute h-44 w-44 rounded-full opacity-70 transition-all group-hover:scale-110 group-hover:opacity-90" />
+              <div className="relative mx-auto flex h-52 sm:h-56 items-center justify-center">
+                <div className="bottle-glow absolute h-40 w-40 sm:h-44 sm:w-44 rounded-full opacity-70 transition-all group-hover:scale-110 group-hover:opacity-90" />
                 {p.bottle === 'dispenser' ? (
-                  <DispenserBottle className="relative z-10 h-44 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105" />
+                  <DispenserBottle className="relative z-10 h-40 sm:h-44 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <WaterBottle
                     variant={p.variant}
-                    className="relative z-10 h-48 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
+                    className="relative z-10 h-44 sm:h-48 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
                     label={p.custom?.label}
                     sublabel={p.custom?.sublabel}
                     customLabelColor={p.custom?.customLabelColor}
@@ -75,11 +79,11 @@ export function ProductsSection() {
                     {p.tag}
                   </span>
                   <h3 className="mt-3 text-2xl font-extrabold text-white">{p.name}</h3>
-                  <p className="text-sm font-bold uppercase tracking-wider text-zinc-300">{p.size}</p>
+                  <p className="text-sm font-bold uppercase tracking-wider text-slate-300">{p.size}</p>
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{p.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{p.desc}</p>
 
               <a
                 href={whatsappLink(
@@ -97,11 +101,11 @@ export function ProductsSection() {
           ))}
 
           {/* CTA tile */}
-          <div className="reveal card-interactive group relative flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2" data-delay="200">
+          <div className="reveal card-interactive group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2 sm:min-w-0 sm:max-w-none sm:shrink-1" data-delay="200">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
             <h3 className="relative display-head text-3xl sm:text-4xl text-white">Can't See Your Size?</h3>
-            <p className="relative mt-3 text-zinc-300">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
+            <p className="relative mt-3 text-slate-300">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
             <a
               href="#contact"
               className="btn-cyan relative mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-bold uppercase tracking-wide"

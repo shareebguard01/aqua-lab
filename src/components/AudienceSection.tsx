@@ -33,7 +33,7 @@ const cards = [
 
 export function AudienceSection() {
   return (
-    <section className="relative bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60">
+    <section className="relative bg-ink-900 py-28 sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -41,7 +41,7 @@ export function AudienceSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             However You Pour It
           </h2>
-          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
             From your morning glass to a boardroom dispenser to a thousand wedding favours — there's an AquaLab for that.
           </p>
         </div>
@@ -50,7 +50,7 @@ export function AudienceSection() {
           {cards.map((c, i) => (
             <article
               key={c.title}
-              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-8 sm:p-9 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String(i * 120)}
             >
               {/* corner blob */}
@@ -65,7 +65,7 @@ export function AudienceSection() {
                 <span className="mt-2 inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
                   {c.tag}
                 </span>
-                <p className="mt-4 text-base leading-relaxed text-zinc-400">{c.desc}</p>
+                <p className="mt-4 text-base leading-relaxed text-slate-300">{c.desc}</p>
 
                 <a
                   href={c.href}

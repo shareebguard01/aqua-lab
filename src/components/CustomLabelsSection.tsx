@@ -13,7 +13,7 @@ const features = [
 
 export function CustomLabelsSection() {
   return (
-    <section id="custom-labels" className="relative overflow-hidden bg-ink-900 py-28 text-white sm:py-36 border-t border-zinc-800/60">
+    <section id="custom-labels" className="relative overflow-hidden bg-ink-900 py-28 text-white sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
       {/* ambient background glows */}
       <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-white/5 blur-3xl animate-blob" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-white/5 blur-3xl animate-blob" style={{ animationDelay: '5s' }} />
@@ -28,7 +28,7 @@ export function CustomLabelsSection() {
             Make Your Event<br />
             <span className="text-white-gradient drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">Memorable</span>
           </h2>
-          <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-zinc-300" data-delay="160">
+          <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-300" data-delay="160">
             Custom-labeled AquaLab water for weddings, conferences and corporate
             gifting. Your brand on every bottle — a small detail your guests will
             actually remember.
@@ -36,7 +36,7 @@ export function CustomLabelsSection() {
 
           <ul className="reveal mt-8 grid gap-3 sm:grid-cols-2" data-delay="240">
             {features.map((f) => (
-              <li key={f} className="flex items-start gap-3 text-sm text-zinc-300">
+              <li key={f} className="flex items-start gap-3 text-sm text-slate-300">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white shadow-neon">
                   <Check className="h-3 w-3 text-black" strokeWidth={3} />
                 </span>
@@ -70,7 +70,7 @@ export function CustomLabelsSection() {
             </div>
           </div>
           <div className="absolute -right-3 bottom-16 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-float z-20" style={{ animationDelay: '1.5s' }}>
-            <p className="text-xs font-bold uppercase text-zinc-400">Your Logo</p>
+            <p className="text-xs font-bold uppercase text-slate-300">Your Logo</p>
             <p className="text-sm font-extrabold text-white neon-text">→ Here</p>
           </div>
 

@@ -20,7 +20,7 @@ const founders = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-ink-900 py-24 text-white sm:py-32 border-t border-zinc-800/60">
+    <section id="about" className="relative overflow-hidden bg-ink-900 py-28 text-white sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
@@ -28,7 +28,7 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
         {/* Founders card */}
         <div className="reveal relative">
-          <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glow backdrop-blur">
+          <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-8 sm:p-10 shadow-glow backdrop-blur">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white neon-text">Founded in Johannesburg</p>
             <h3 className="display-head mt-2 text-3xl text-white sm:text-4xl">Meet The Founders</h3>
 
@@ -48,14 +48,14 @@ export function AboutSection() {
                   </span>
                   <div className="min-w-0">
                     <p className="font-bold text-white">{f.name}</p>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-zinc-400">{f.role}</p>
-                    <p className="mt-0.5 text-sm text-zinc-300">{f.phone}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{f.role}</p>
+                    <p className="mt-0.5 text-sm text-slate-300">{f.phone}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 text-base leading-relaxed text-zinc-300">
+            <p className="mt-6 text-base leading-relaxed text-slate-300">
               Born and raised in Johannesburg, Muhammed and Nurina set out to make
               clean water something every South African community can count on — fresh,
               safe, and never out of reach.
@@ -69,24 +69,24 @@ export function AboutSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Clean, Fresh, <span className="text-white-gradient drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">Accessible</span>
           </h2>
-          <p className="reveal mt-5 text-lg leading-relaxed text-zinc-300" data-delay="160">
+          <p className="reveal mt-5 text-lg leading-relaxed text-slate-300" data-delay="160">
             AquaLab was built on a simple belief: clean water isn't a luxury, it's the
             starting point for everything else. Every bottle we fill is a step toward
             healthier South African communities.
           </p>
 
           <div className="reveal mt-8 grid gap-4 sm:grid-cols-2" data-delay="240">
-            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
+            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-6 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <Eye className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Vision</h4>
-              <p className="mt-1.5 text-sm text-zinc-400">
+              <p className="mt-1.5 text-sm text-slate-300">
                 Clean, fresh, accessible water for every South African community.
               </p>
             </div>
-            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-5 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
+            <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-6 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <FlaskConical className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Promise</h4>
-              <p className="mt-1.5 text-sm text-zinc-400">
+              <p className="mt-1.5 text-sm text-slate-300">
                 Rigorous water-quality testing for high potability and safety, batch after batch.
               </p>
             </div>

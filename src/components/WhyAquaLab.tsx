@@ -25,7 +25,7 @@ const usps = [
 
 export function WhyAquaLab() {
   return (
-    <section className="relative bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60">
+    <section className="relative bg-ink-900 py-28 sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 to-ink-900" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -33,7 +33,7 @@ export function WhyAquaLab() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Purity You Can Trust
           </h2>
-          <p className="reveal mt-4 text-lg text-zinc-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
             Four promises in every bottle — from source to sip.
           </p>
         </div>
@@ -42,14 +42,14 @@ export function WhyAquaLab() {
           {usps.map((u, i) => (
             <div
               key={u.title}
-              className="reveal card-interactive group rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive group rounded-4xl border border-white/20 bg-ink-800/80 p-8 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
               data-delay={String(i * 100)}
             >
               <span className="grid h-14 w-14 place-items-center rounded-2xl border border-white/40 bg-white/10 text-white shadow-neon transition-transform group-hover:scale-110">
                 <u.icon className="h-7 w-7" />
               </span>
               <h3 className="mt-5 text-xl font-extrabold text-white">{u.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{u.desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">{u.desc}</p>
             </div>
           ))}
         </div>
