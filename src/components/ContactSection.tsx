@@ -13,8 +13,8 @@ const enquiryTypes: { value: EnquiryType; label: string }[] = [
 ];
 
 const founders = [
-  { ...CONTACTS.muhammed, message: "Hi AquaLab! I'd like to chat about your water." },
   { ...CONTACTS.nurina, message: "Hi AquaLab! I'd like to chat about your water." },
+  { ...CONTACTS.muhammed, message: "Hi AquaLab! I'd like to chat about your water." },
 ];
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -98,10 +98,13 @@ export function ContactSection() {
                   <Mail className="h-5 w-5 text-white" /> {CONTACTS.email}
                 </a>
                 <p className="flex items-center gap-3 text-zinc-300">
-                  <Phone className="h-5 w-5 text-white" /> {CONTACTS.muhammed.phone}
+                  <Phone className="h-5 w-5 text-white" /> {CONTACTS.nurina.name}: {CONTACTS.nurina.phone}
                 </p>
                 <p className="flex items-center gap-3 text-zinc-300">
-                  <MapPin className="h-5 w-5 text-white" /> {CONTACTS.location}
+                  <Phone className="h-5 w-5 text-white" /> {CONTACTS.muhammed.name}: {CONTACTS.muhammed.phone}
+                </p>
+                <p className="flex items-start gap-3 text-zinc-300">
+                  <MapPin className="h-5 w-5 text-white shrink-0 mt-0.5" /> {CONTACTS.location}
                 </p>
               </div>
             </div>

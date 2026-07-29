@@ -5,16 +5,16 @@ const LOGO = '/Untitled_design_20260726_210210_0000.png';
 
 const founders = [
   {
-    name: 'Muhammed Halim',
-    initial: 'M',
-    role: 'Co-Founder',
-    phone: '(+27) 081 053 9335',
-  },
-  {
     name: 'Nurina Patel',
     initial: 'N',
     role: 'Co-Founder',
-    phone: '(+27) 082 555 4498',
+    phone: '082 555 4498',
+  },
+  {
+    name: 'Muhammed Halim',
+    initial: 'M',
+    role: 'Co-Founder',
+    phone: '081 053 9335',
   },
 ];
 
@@ -56,9 +56,8 @@ export function AboutSection() {
             </div>
 
             <p className="mt-6 text-base leading-relaxed text-slate-300">
-              Born and raised in Johannesburg, Muhammed and Nurina set out to make
-              clean water something every South African community can count on — fresh,
-              safe, and never out of reach.
+              Born and raised in Johannesburg, Nurina and Muhammed set out to make
+              Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source — accessible to every South African community.
             </p>
           </div>
         </div>

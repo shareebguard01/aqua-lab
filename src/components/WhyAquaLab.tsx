@@ -1,25 +1,25 @@
-import { MapPin, Filter, Tag, Leaf } from 'lucide-react';
+import { MapPin, Filter, Tag, Leaf, Award, ShieldCheck } from 'lucide-react';
 
 const usps = [
   {
     icon: MapPin,
-    title: 'Locally Sourced',
-    desc: 'High-quality freshwater drawn from trusted South African sources, bottled close to home.',
+    title: 'Bottled at the Source',
+    desc: 'Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source in Johannesburg.',
   },
   {
     icon: Filter,
-    title: 'Advanced Filtration',
-    desc: 'Multi-stage filtration and treatment removes impurities while keeping the fresh, natural taste.',
+    title: 'Reverse Osmosis Purity',
+    desc: 'Multi-stage Reverse Osmosis purification removes impurities down to micro-levels for absolute safety.',
   },
   {
     icon: Tag,
     title: 'Affordable Pricing',
-    desc: 'Competitive, fair pricing on every size — clean water should never be out of reach.',
+    desc: 'Competitive, fair pricing on every size — clean, pure water should never be out of reach.',
   },
   {
     icon: Leaf,
     title: 'Eco-Friendly Packaging',
-    desc: 'Sustainable, recyclable bottles and responsible packaging that respects our water sources.',
+    desc: 'Sustainable, recyclable bottles and responsible packaging that respects our environment.',
   },
 ];
 
@@ -34,11 +34,33 @@ export function WhyAquaLab() {
             Purity You Can Trust
           </h2>
           <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
-            Four promises in every bottle — from source to sip.
+            Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* SANAS Certification Badge Strip */}
+        <div className="reveal mt-10 mx-auto max-w-3xl rounded-3xl border border-white/30 bg-gradient-to-r from-ink-800 via-ink-800/90 to-ink-800 p-6 shadow-glow backdrop-blur" data-delay="200">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-4">
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/40 bg-white/10 text-white shadow-neon">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <div>
+                <div className="flex items-center justify-center sm:justify-start gap-2">
+                  <span className="text-sm font-extrabold uppercase tracking-widest text-white">SANAS Approved</span>
+                  <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase text-white border border-white/30">Certified</span>
+                </div>
+                <p className="mt-1 text-sm text-slate-300">South African National Accreditation System Standards Compliant</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 border-t sm:border-t-0 sm:border-l border-white/15 pt-3 sm:pt-0 sm:pl-6">
+              <ShieldCheck className="h-4 w-4 text-white shrink-0" />
+              <span>Lab Quality Assured</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {usps.map((u, i) => (
             <div
               key={u.title}

@@ -17,7 +17,7 @@ const cards = [
     tag: 'Bulk · 18L Dispensers',
     cta: 'WhatsApp Bulk Quote',
     href: whatsappLink(
-      CONTACTS.muhammed.phoneRaw,
+      CONTACTS.nurina.phoneRaw,
       "Hi AquaLab, I'd like a bulk supply quote for our business."
     ),
   },

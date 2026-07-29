@@ -5,7 +5,9 @@ import { AudienceSection } from '@/components/AudienceSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProductsSection } from '@/components/ProductsSection';
 import { WhyAquaLab } from '@/components/WhyAquaLab';
+import { LabSpecsSection } from '@/components/LabSpecsSection';
 import { CustomLabelsSection } from '@/components/CustomLabelsSection';
+import { ClientShowcase } from '@/components/ClientShowcase';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 
@@ -21,7 +23,9 @@ function App() {
         <AboutSection />
         <ProductsSection />
         <WhyAquaLab />
+        <LabSpecsSection />
         <CustomLabelsSection />
+        <ClientShowcase />
         <ContactSection />
       </main>
       <Footer />

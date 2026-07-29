@@ -47,7 +47,7 @@ export function Footer() {
               </div>
             </a>
             <p className="mt-5 max-w-sm text-sm text-zinc-400 leading-relaxed">
-              Life starts with clean water. Premium Johannesburg bottled water — locally sourced, lab-tested and sustainably packaged.
+              Life starts with clean water. Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map((s) => (
@@ -81,25 +81,28 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-white">
-                  <Mail className="h-4 w-4 text-white" /> {CONTACTS.email}
+                  <Mail className="h-4 w-4 text-white shrink-0" /> {CONTACTS.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Phone className="h-4 w-4 text-white" /> {CONTACTS.muhammed.phone}
+                <Phone className="h-4 w-4 text-white shrink-0" /> {CONTACTS.nurina.name}: {CONTACTS.nurina.phone}
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Phone className="h-4 w-4 text-white" /> {CONTACTS.nurina.phone}
+                <Phone className="h-4 w-4 text-white shrink-0" /> {CONTACTS.muhammed.name}: {CONTACTS.muhammed.phone}
               </li>
-              <li className="flex items-center gap-3 text-zinc-400">
-                <MapPin className="h-4 w-4 text-white" /> {CONTACTS.location}
+              <li className="flex items-start gap-3 text-zinc-400">
+                <MapPin className="h-4 w-4 text-white shrink-0 mt-0.5" /> {CONTACTS.location}
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-zinc-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} AquaLab. All rights reserved.</p>
-          <p>Founded by Muhammed Halim &amp; Nurina Patel · Johannesburg, South Africa</p>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-zinc-400 sm:flex-row">
+          <div className="flex flex-col gap-1 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} AquaLab. All rights reserved.</p>
+            <p className="text-xs text-zinc-500">{CONTACTS.company} | SANAS Approved</p>
+          </div>
+          <p className="text-center sm:text-right">Founded by Nurina Patel &amp; Muhammed Halim · Johannesburg, South Africa</p>
         </div>
       </div>
     </footer>

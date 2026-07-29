@@ -58,14 +58,14 @@ export function ProductsSection() {
               )}
 
               {/* Bottle stage */}
-              <div className="relative mx-auto flex h-52 sm:h-56 items-center justify-center">
-                <div className="bottle-glow absolute h-40 w-40 sm:h-44 sm:w-44 rounded-full opacity-70 transition-all group-hover:scale-110 group-hover:opacity-90" />
+              <div className="relative mx-auto flex h-72 sm:h-80 items-center justify-center py-4">
+                <div className="bottle-glow absolute h-60 w-60 sm:h-64 sm:w-64 rounded-full opacity-75 transition-all group-hover:scale-110 group-hover:opacity-95" />
                 {p.bottle === 'dispenser' ? (
-                  <DispenserBottle className="relative z-10 h-40 sm:h-44 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105" />
+                  <DispenserBottle className="relative z-10 h-60 sm:h-68 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <WaterBottle
                     variant={p.variant}
-                    className="relative z-10 h-44 sm:h-48 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
+                    className="relative z-10 h-64 sm:h-72 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                     label={p.custom?.label}
                     sublabel={p.custom?.sublabel}
                     customLabelColor={p.custom?.customLabelColor}
@@ -87,7 +87,7 @@ export function ProductsSection() {
 
               <a
                 href={whatsappLink(
-                  CONTACTS.muhammed.phoneRaw,
+                  CONTACTS.nurina.phoneRaw,
                   `Hi AquaLab, I'd like to enquire about the ${p.name} (${p.size}).`
                 )}
                 target="_blank"

@@ -1,20 +1,23 @@
 // Central place for contact details so the navbar, contact section, and
 // footer all stay in sync. Update here once.
 export const CONTACTS = {
-  muhammed: {
-    name: 'Muhammed Halim',
-    role: 'Co-Founder',
-    phone: '(+27) 081 053 9335',
-    phoneRaw: '27810539335',
-  },
   nurina: {
     name: 'Nurina Patel',
     role: 'Co-Founder',
-    phone: '(+27) 082 555 4498',
+    phone: '082 555 4498',
     phoneRaw: '27825554498',
   },
+  muhammed: {
+    name: 'Muhammed Halim',
+    role: 'Co-Founder',
+    phone: '081 053 9335',
+    phoneRaw: '27810539335',
+  },
   email: 'info@aqualab1.co.za',
-  location: 'Johannesburg, South Africa',
+  location: 'Banghalor Drive, Ext 11 Lenasia, Johannesburg, Gauteng, South Africa',
+  company: 'Specially packaged by Aqualabh2o Pty Ltd',
+  accreditation: 'SANAS Approved - South African National Accreditation System',
+  sourceAccuracy: 'Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.',
 };
 
 export function whatsappLink(phoneRaw: string, message: string) {
