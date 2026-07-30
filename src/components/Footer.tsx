@@ -42,12 +42,12 @@ export function Footer() {
                 <span className="display-head text-3xl text-white">
                   Aqua<span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Lab</span>
                 </span>
-                <span className="text-xs font-medium text-zinc-300">
+                <span className="text-xs font-semibold text-slate-100 tracking-normal">
                   Water is the only thing you should taste in water
                 </span>
               </div>
             </a>
-            <p className="mt-5 max-w-sm text-sm text-zinc-300 leading-relaxed font-normal">
+            <p className="mt-5 max-w-sm text-sm text-slate-100 leading-relaxed font-medium">
               Life starts with clean water. Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source. EST. 2024.
             </p>
             <div className="mt-6 flex gap-3">
@@ -72,7 +72,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className="text-zinc-400 transition-colors hover:text-white">{n.label}</a>
+                  <a href={n.href} className="text-slate-200 transition-colors hover:text-white font-medium">{n.label}</a>
                 </li>
               ))}
             </ul>
@@ -83,29 +83,29 @@ export function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-white">
+                <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-3 text-slate-200 transition-colors hover:text-white font-medium">
                   <Mail className="h-4 w-4 text-white shrink-0" /> {CONTACTS.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-zinc-400">
+              <li className="flex items-center gap-3 text-slate-200 font-medium">
                 <Phone className="h-4 w-4 text-white shrink-0" /> {CONTACTS.nurina.name}: {CONTACTS.nurina.phone}
               </li>
-              <li className="flex items-center gap-3 text-zinc-400">
+              <li className="flex items-center gap-3 text-slate-200 font-medium">
                 <Phone className="h-4 w-4 text-white shrink-0" /> {CONTACTS.muhammed.name}: {CONTACTS.muhammed.phone}
               </li>
-              <li className="flex items-start gap-3 text-zinc-400">
+              <li className="flex items-start gap-3 text-slate-200 font-medium">
                 <MapPin className="h-4 w-4 text-white shrink-0 mt-0.5" /> {CONTACTS.location}
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-zinc-400 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-200 sm:flex-row">
           <div className="flex flex-col gap-1 text-center sm:text-left">
             <p>© {new Date().getFullYear()} AquaLab. All rights reserved.</p>
-            <p className="text-xs text-zinc-500">{CONTACTS.company} | SANAS Approved</p>
+            <p className="text-xs text-slate-300 font-medium">{CONTACTS.company} | SANAS Approved</p>
           </div>
-          <p className="text-center sm:text-right">Founded by Nurina Patel &amp; Muhammed Halim · Johannesburg, South Africa</p>
+          <p className="text-center sm:text-right font-medium">Founded by Nurina Patel &amp; Muhammed Halim · Johannesburg, South Africa</p>
         </div>
       </div>
     </footer>

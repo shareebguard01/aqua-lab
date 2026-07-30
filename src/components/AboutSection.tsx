@@ -20,7 +20,7 @@ const founders = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-ink-900 py-28 text-white sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
+    <section id="about" className="relative overflow-hidden bg-ink-900 py-20 text-white sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
@@ -36,26 +36,26 @@ export function AboutSection() {
             <div className="logo-halo mt-6 flex items-center gap-4">
               <img src={LOGO} alt="AquaLab brand mark" className="logo-glow h-14 w-14 object-contain" />
               <span className="display-head text-2xl text-white">
-                Aqua<span className="text-white-gradient drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Lab</span>
+                Aqua<span className="text-white-gradient drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">Lab</span>
               </span>
             </div>
 
             <div className="mt-7 grid gap-5 sm:grid-cols-2">
               {founders.map((f) => (
-                <div key={f.name} className="flex items-center gap-4 rounded-3xl border border-white/15 bg-ink-900/80 p-4">
+                <div key={f.name} className="flex items-center gap-4 rounded-3xl border border-white/20 bg-ink-900/80 p-4">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/40 bg-white/10 text-xl font-extrabold text-white shadow-neon">
                     {f.initial}
                   </span>
                   <div className="min-w-0">
                     <p className="font-bold text-white">{f.name}</p>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">{f.role}</p>
-                    <p className="mt-0.5 text-sm text-slate-200 font-medium">{f.phone}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-200">{f.role}</p>
+                    <p className="mt-0.5 text-sm text-slate-100 font-semibold">{f.phone}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 text-base leading-relaxed text-slate-200 font-normal">
+            <p className="mt-6 text-base leading-relaxed text-slate-100 font-medium">
               Founded in 2024 in Johannesburg, Nurina and Muhammed set out to make
               Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source — accessible to every South African community.
             </p>
@@ -66,9 +66,9 @@ export function AboutSection() {
         <div>
           <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Our Story</p>
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
-            Clean, Fresh, <span className="text-white-gradient drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">Accessible</span>
+            Clean, Fresh, <span className="text-white-gradient drop-shadow-[0_2px_10px_rgba(255,255,255,0.35)]">Accessible</span>
           </h2>
-          <p className="reveal mt-5 text-lg leading-relaxed text-slate-300" data-delay="160">
+          <p className="reveal mt-5 text-lg leading-relaxed text-slate-100 font-medium" data-delay="160">
             AquaLab was built on a simple belief: clean water isn't a luxury, it's the
             starting point for everything else. Every bottle we fill is a step toward
             healthier South African communities.
@@ -78,14 +78,14 @@ export function AboutSection() {
             <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-6 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <Eye className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Vision</h4>
-              <p className="mt-1.5 text-sm text-slate-300">
+              <p className="mt-1.5 text-sm text-slate-100 font-medium">
                 Clean, fresh, accessible water for every South African community.
               </p>
             </div>
             <div className="card-interactive rounded-3xl border border-white/20 bg-ink-800/60 p-6 backdrop-blur transition-all hover:border-white/50 hover:shadow-glow">
               <FlaskConical className="h-7 w-7 text-white" />
               <h4 className="mt-3 font-bold uppercase tracking-wide text-white">Our Promise</h4>
-              <p className="mt-1.5 text-sm text-slate-300">
+              <p className="mt-1.5 text-sm text-slate-100 font-medium">
                 Rigorous water-quality testing for high potability and safety, batch after batch.
               </p>
             </div>

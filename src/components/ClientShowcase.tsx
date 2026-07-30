@@ -65,7 +65,7 @@ export function ClientShowcase() {
   const whatsappQuoteMsg = "Hi AquaLab, I'd like to get a quote for custom branded water bottles.";
 
   return (
-    <section id="client-showcase" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32 border-t border-zinc-800/60 my-6 sm:my-16">
+    <section id="client-showcase" className="relative overflow-hidden bg-ink-900 py-20 sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       {/* Ambient background glows */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
@@ -82,13 +82,13 @@ export function ClientShowcase() {
             Trusted by Premier Brands &amp; Elite Events
           </h2>
 
-          <p className="reveal mt-5 text-lg leading-relaxed text-slate-300" data-delay="160">
+          <p className="reveal mt-5 text-lg leading-relaxed text-slate-100 font-medium" data-delay="160">
             From luxury automotive dealerships to fitness studios and private celebrations, see how we bring custom branding to life on premium water bottles.
           </p>
         </div>
 
         {/* Interactive Portfolio Grid */}
-        <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {clientCases.map((client, index) => (
             <article
               key={client.id}
@@ -116,13 +116,13 @@ export function ClientShowcase() {
 
               {/* Card content */}
               <div className="p-7">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
                   {client.category}
                 </span>
                 <h3 className="mt-2 text-2xl font-extrabold text-white">
                   {client.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 text-sm leading-relaxed text-slate-100 font-normal">
                   {client.description}
                 </p>
               </div>
@@ -134,13 +134,13 @@ export function ClientShowcase() {
         <div className="reveal mt-16 rounded-4xl border border-white/30 bg-gradient-to-r from-ink-800 via-ink-800/90 to-ink-950 p-8 sm:p-12 shadow-glow backdrop-blur" data-delay="200">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-neon">
                 <ShieldCheck className="h-4 w-4 text-white" /> Turnkey Bottling Solutions
               </div>
               <h3 className="display-head mt-4 text-3xl sm:text-4xl lg:text-5xl text-white">
                 Want Your Brand on Our Bottles?
               </h3>
-              <p className="mt-3 text-base sm:text-lg text-slate-300">
+              <p className="mt-3 text-base sm:text-lg text-slate-100 font-medium">
                 Low minimum order quantities, fast turnaround, and custom label finishes (Gloss, Matte, Metallic).
               </p>
             </div>
@@ -150,14 +150,14 @@ export function ClientShowcase() {
                 href={whatsappLink(CONTACTS.nurina.phoneRaw, whatsappQuoteMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cyan group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-wide"
+                className="btn-cyan group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-8 py-4 text-sm font-extrabold uppercase tracking-wide shadow-neon"
               >
                 <MessageCircle className="h-5 w-5 text-ink-950" />
                 Get Custom Batch Quote
               </a>
               <a
                 href="#products"
-                className="btn-neon inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide"
+                className="btn-neon inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold uppercase tracking-wide"
               >
                 View Bottle Styles &amp; Sizes
                 <ArrowRight className="h-4 w-4 text-white" />

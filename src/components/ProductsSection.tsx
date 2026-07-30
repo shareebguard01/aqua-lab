@@ -26,7 +26,7 @@ const products: Product[] = [
 
 export function ProductsSection() {
   return (
-    <section id="products" className="relative overflow-hidden bg-ink-900 py-28 sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
+    <section id="products" className="relative overflow-hidden bg-ink-900 py-20 sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
@@ -36,10 +36,10 @@ export function ProductsSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Find Your Size
           </h2>
-          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-100 font-medium" data-delay="160">
             From pocket-sized still water to office-grade 18L dispensers — plus flavoured and sparkling favourites.
           </p>
-          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-300 sm:hidden">
+          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-100 sm:hidden">
             ← Swipe to view sizes →
           </p>
         </div>
@@ -60,7 +60,7 @@ export function ProductsSection() {
 
               {/* Bottle stage */}
               <div className="relative mx-auto flex h-72 sm:h-80 items-center justify-center py-4">
-                <div className="bottle-glow absolute h-60 w-60 sm:h-64 sm:w-64 rounded-full opacity-75 transition-all group-hover:scale-110 group-hover:opacity-95" />
+                <div className="bottle-glow absolute h-60 w-60 sm:h-64 sm:w-64 rounded-full opacity-85 transition-all group-hover:scale-110 group-hover:opacity-100" />
                 {p.image ? (
                   <img
                     src={p.image}
@@ -82,15 +82,15 @@ export function ProductsSection() {
 
               <div className="mt-2 flex items-center justify-between">
                 <div>
-                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  <span className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white">
                     {p.tag}
                   </span>
                   <h3 className="mt-3 text-2xl font-extrabold text-white">{p.name}</h3>
-                  <p className="text-sm font-bold uppercase tracking-wider text-slate-200">{p.size}</p>
+                  <p className="text-sm font-bold uppercase tracking-wider text-slate-100">{p.size}</p>
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-200 font-normal">{p.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-100 font-normal">{p.desc}</p>
 
               <a
                 href={whatsappLink(
@@ -99,7 +99,7 @@ export function ProductsSection() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-neon mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold uppercase tracking-wide"
+                className="btn-neon mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-wide"
               >
                 Enquire
                 <ArrowUpRight className="h-4 w-4" />
@@ -112,10 +112,10 @@ export function ProductsSection() {
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
             <h3 className="relative display-head text-3xl sm:text-4xl text-white">Can't See Your Size?</h3>
-            <p className="relative mt-3 text-slate-300">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
+            <p className="relative mt-3 text-slate-100 font-medium">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
             <a
               href="#contact"
-              className="btn-cyan relative mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-bold uppercase tracking-wide"
+              className="btn-cyan relative mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide shadow-neon"
             >
               Custom Enquiry <ArrowUpRight className="h-4 w-4" />
             </a>

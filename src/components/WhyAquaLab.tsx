@@ -25,7 +25,7 @@ const usps = [
 
 export function WhyAquaLab() {
   return (
-    <section className="relative bg-ink-900 py-28 sm:py-36 border-t border-zinc-800/60 my-6 sm:my-16">
+    <section className="relative bg-ink-900 py-20 sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 to-ink-900" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -33,7 +33,7 @@ export function WhyAquaLab() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Purity You Can Trust
           </h2>
-          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-100 font-medium" data-delay="160">
             Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.
           </p>
         </div>
@@ -50,10 +50,10 @@ export function WhyAquaLab() {
                   <span className="text-sm font-extrabold uppercase tracking-widest text-white">SANAS Approved</span>
                   <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase text-white border border-white/30">Certified</span>
                 </div>
-                <p className="mt-1 text-sm text-slate-200">South African National Accreditation System Standards Compliant</p>
+                <p className="mt-1 text-sm text-slate-100 font-medium">South African National Accreditation System Standards Compliant</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-200 border-t sm:border-t-0 sm:border-l border-white/15 pt-3 sm:pt-0 sm:pl-6">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-100 border-t sm:border-t-0 sm:border-l border-white/15 pt-3 sm:pt-0 sm:pl-6">
               <ShieldCheck className="h-4 w-4 text-white shrink-0" />
               <span>Lab Quality Assured</span>
             </div>
@@ -71,7 +71,7 @@ export function WhyAquaLab() {
                 <u.icon className="h-7 w-7" />
               </span>
               <h3 className="mt-5 text-xl font-extrabold text-white">{u.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-200 font-normal">{u.desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-100 font-normal">{u.desc}</p>
             </div>
           ))}
         </div>

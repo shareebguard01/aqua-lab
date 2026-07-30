@@ -42,7 +42,7 @@ export function Navbar() {
             <span className="display-head text-2xl sm:text-3xl text-white tracking-wide">
               Aqua<span className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">Lab</span>
             </span>
-            <span className="text-[11px] font-medium tracking-tight text-zinc-300 leading-tight hidden sm:block">
+            <span className="text-[11.5px] font-semibold tracking-normal text-slate-100 leading-tight hidden sm:block">
               Water is the only thing you should taste in water
             </span>
           </div>
@@ -53,7 +53,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-zinc-200 transition-all hover:text-white hover:neon-text"
+                className="rounded-full px-4 py-2 text-sm font-semibold text-slate-100 transition-all hover:text-white hover:neon-text"
               >
                 {l.label}
               </a>
@@ -64,14 +64,14 @@ export function Navbar() {
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="btn-neon rounded-full px-6 py-3 text-sm font-bold uppercase tracking-wide"
+            className="btn-cyan rounded-full px-6 py-2.5 text-xs font-extrabold uppercase tracking-wider shadow-neon"
           >
             Get a Quote
           </a>
         </div>
 
         <button
-          className="grid h-10 w-10 place-items-center rounded-xl border border-zinc-700 text-white md:hidden neon-border-soft"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-white/30 text-white md:hidden neon-border-soft"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -81,19 +81,19 @@ export function Navbar() {
       </nav>
 
       {/* Mobile tagline banner */}
-      <div className="block sm:hidden px-5 pt-1 text-[11px] text-center font-medium text-zinc-300">
+      <div className="block sm:hidden px-5 pt-1 text-[11.5px] text-center font-semibold text-slate-100 tracking-normal">
         Water is the only thing you should taste in water
       </div>
 
       {/* Mobile drawer */}
       <div className={`md:hidden overflow-hidden transition-all duration-400 ${open ? 'max-h-96' : 'max-h-0'}`}>
-        <ul className="mx-5 mt-3 flex flex-col gap-1 rounded-3xl glass p-4 shadow-glass border border-zinc-800">
+        <ul className="mx-5 mt-3 flex flex-col gap-1 rounded-3xl glass p-4 shadow-glass border border-white/20">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-2xl px-4 py-3 text-base font-semibold text-zinc-200 hover:bg-white/10 hover:text-white"
+                className="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-100 hover:bg-white/10 hover:text-white"
               >
                 {l.label}
               </a>
@@ -103,7 +103,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="btn-neon mt-1 block rounded-2xl px-4 py-3 text-center text-base font-bold uppercase"
+              className="btn-cyan mt-1 block rounded-2xl px-4 py-3 text-center text-base font-extrabold uppercase shadow-neon"
             >
               Get a Quote
             </a>

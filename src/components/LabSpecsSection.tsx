@@ -17,7 +17,7 @@ const labSpecs: SpecItem[] = [
 
 export function LabSpecsSection() {
   return (
-    <section id="quality" className="relative overflow-hidden bg-ink-900 py-24 text-white sm:py-32 border-t border-zinc-800/60 my-6 sm:my-16">
+    <section id="quality" className="relative overflow-hidden bg-ink-900 py-20 text-white sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
@@ -32,7 +32,7 @@ export function LabSpecsSection() {
             Lab Quality &amp; Nutritional Specs
           </h2>
 
-          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-100 font-medium" data-delay="160">
             Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source. Every batch is rigorously tested for maximum safety and crisp taste.
           </p>
         </div>
@@ -51,13 +51,13 @@ export function LabSpecsSection() {
                     National Standard
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-slate-200">
+                <p className="mt-1 text-sm text-slate-100 font-medium">
                   South African National Accreditation System — Batch Certified &amp; Continuously Tested.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 rounded-2xl border border-white/20 bg-ink-900/80 px-5 py-3 text-sm font-bold text-white shadow-soft">
+            <div className="flex items-center gap-3 rounded-2xl border border-white/30 bg-ink-900/80 px-5 py-3 text-sm font-extrabold text-white shadow-soft">
               <Sparkles className="h-5 w-5 text-white" />
               <span>100% Potable &amp; Safe</span>
             </div>
@@ -74,10 +74,10 @@ export function LabSpecsSection() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
                     {spec.label}
                   </span>
-                  <CheckCircle2 className="h-4 w-4 text-white opacity-80" />
+                  <CheckCircle2 className="h-4 w-4 text-white opacity-90" />
                 </div>
 
                 <div className="mt-4 flex items-baseline gap-2">
@@ -88,11 +88,11 @@ export function LabSpecsSection() {
               </div>
 
               <div className="mt-6 border-t border-white/10 pt-4 flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-100">
                   {spec.status}
                 </span>
                 {spec.note && (
-                  <span className="text-[11px] font-medium text-slate-300">
+                  <span className="text-[11px] font-semibold text-slate-200">
                     {spec.note}
                   </span>
                 )}

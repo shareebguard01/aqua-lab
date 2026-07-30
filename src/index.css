@@ -70,10 +70,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-/* Neon white text gradient */
+/* Neon white text gradient with crisp contrast */
 .text-aqua-gradient,
 .text-white-gradient {
-  background: linear-gradient(120deg, #ffffff 0%, #e4e4e7 50%, #a1a1aa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 55%, #cbd5e1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -83,8 +83,8 @@ body {
 .bottle-glow {
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(255, 255, 255, 0.22) 0%,
-    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
     rgba(255, 255, 255, 0) 70%
   );
 }
@@ -92,21 +92,21 @@ body {
 .bottle-glow-pulse {
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.12) 40%,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.15) 42%,
     rgba(255, 255, 255, 0) 70%
   );
-  animation: bottlePulse 4s ease-in-out infinite alternate;
+  animation: bottlePulse 3.5s ease-in-out infinite alternate;
 }
 
 @keyframes bottlePulse {
   0% {
-    transform: scale(0.92);
-    opacity: 0.65;
+    transform: scale(0.95);
+    opacity: 0.7;
   }
   100% {
     transform: scale(1.08);
-    opacity: 0.95;
+    opacity: 1;
   }
 }
 
@@ -132,22 +132,22 @@ body {
 
 /* Neon white border + glow helpers */
 .neon-border {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 .neon-border-soft {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 .neon-glow {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
 }
 .neon-glow-strong {
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.85), 0 0 50px rgba(255, 255, 255, 0.4);
 }
 .neon-text {
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
 /* Logo soft glow that follows droplet silhouette */
@@ -170,30 +170,36 @@ body {
   pointer-events: none;
 }
 
-/* Button: dark fill + white neon border + white text */
+/* Button: High-contrast secondary glassmorphism CTA */
 .btn-neon {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.05);
-  transition: all 0.25s ease;
-}
-.btn-neon:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), inset 0 0 12px rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-neon:hover {
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.7), inset 0 0 14px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
-/* Button: pure white fill + white glow (primary) */
+/* Button: Solid high-contrast pure white CTA (Primary) */
 .btn-cyan {
   background: #ffffff;
   color: #0a0a0c;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.25);
-  transition: all 0.25s ease;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.75), 0 0 35px rgba(255, 255, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-cyan:hover {
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 45px rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.95), 0 0 50px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  background: #ffffff;
+  color: #000000;
 }
 
 /* Custom scrollbar */
