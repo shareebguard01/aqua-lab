@@ -4,8 +4,8 @@ export const CONTACTS = {
   nurina: {
     name: 'Nurina Patel',
     role: 'Co-Founder',
-    phone: '082 555 4498',
-    phoneRaw: '27825554498',
+    phone: '082 855 4498',
+    phoneRaw: '27828554498',
   },
   muhammed: {
     name: 'Muhammed Halim',
@@ -18,6 +18,8 @@ export const CONTACTS = {
   company: 'Specially packaged by Aqualabh2o Pty Ltd',
   accreditation: 'SANAS Approved - South African National Accreditation System',
   sourceAccuracy: 'Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.',
+  instagram: 'https://www.instagram.com/aqualab_h20?igsh=djU0cHppMHZqMnMx',
+  foundedYear: '2024',
 };
 
 export function whatsappLink(phoneRaw: string, message: string) {

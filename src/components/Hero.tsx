@@ -12,8 +12,8 @@ export function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Copy */}
         <div className="relative z-10 text-center lg:text-left">
-          <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20">
-            <Droplet className="h-3.5 w-3.5 text-white" fill="currentColor" /> Johannesburg, South Africa
+          <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4.5 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20 shadow-neon">
+            <Droplet className="h-3.5 w-3.5 text-white" fill="currentColor" /> EST. 2024 · Johannesburg, South Africa
           </span>
 
           <h1 className="reveal display-head mt-6 text-5xl text-white sm:text-6xl lg:text-7xl xl:text-8xl" data-delay="80">
@@ -22,7 +22,7 @@ export function Hero() {
             Water
           </h1>
 
-          <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-300 lg:mx-0" data-delay="160">
+          <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-200 lg:mx-0 font-medium" data-delay="160">
             Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source. AquaLab brings
             Johannesburg fresh, lab-tested water — for your home, your office, and your
             biggest celebrations.
@@ -45,7 +45,7 @@ export function Hero() {
           </div>
 
           {/* Trust strip */}
-          <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-slate-300 lg:justify-start" data-delay="320">
+          <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold text-slate-200 lg:justify-start" data-delay="320">
             <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-white" /> Reverse Osmosis Purity</span>
             <span className="inline-flex items-center gap-2"><Leaf className="h-4 w-4 text-white" /> SANAS Approved</span>
             <span className="inline-flex items-center gap-2"><Droplet className="h-4 w-4 text-white" fill="currentColor" /> Bottled at the Source</span>
@@ -53,16 +53,16 @@ export function Hero() {
         </div>
 
         {/* Hero bottle stage */}
-        <div className="relative flex items-center justify-center py-12 sm:py-8">
+        <div className="relative flex items-center justify-center py-10 sm:py-8">
           {/* Soft ambient pure-white radial glow directly behind the bottle */}
-          <div className="bottle-glow-pulse absolute h-[36rem] w-[36rem] sm:h-[48rem] sm:w-[48rem] rounded-full pointer-events-none" />
+          <div className="bottle-glow-pulse absolute h-[32rem] w-[32rem] sm:h-[48rem] sm:w-[48rem] rounded-full pointer-events-none" />
 
           {/* Enlarged bottle asset with prominent drop shadow, sleek -8 deg rotation & floating animation */}
-          <div className="animate-float -rotate-8 transform transition-transform duration-500 hover:-rotate-6">
+          <div className="animate-float -rotate-8 transform transition-transform duration-500 hover:-rotate-6 w-full flex justify-center">
             <img
               src="/aqualab_bottle_clean.png"
               alt="AquaLab Water Bottle"
-              className="relative z-10 w-[88vw] min-w-[280px] max-w-xs sm:max-w-sm lg:max-w-md h-auto sm:h-[42rem] lg:h-[48rem] object-contain drop-shadow-[0_0_45px_rgba(255,255,255,0.45)] drop-shadow-[0_25px_60px_rgba(255,255,255,0.25)]"
+              className="relative z-10 w-[92vw] min-w-[280px] max-w-sm sm:max-w-md lg:max-w-lg h-auto max-h-[34rem] sm:max-h-none sm:h-[42rem] lg:h-[48rem] object-contain drop-shadow-[0_0_45px_rgba(255,255,255,0.45)] drop-shadow-[0_25px_60px_rgba(255,255,255,0.25)]"
             />
           </div>
 
