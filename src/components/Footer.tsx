@@ -103,7 +103,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-200 sm:flex-row">
           <div className="flex flex-col gap-1 text-center sm:text-left">
             <p>© {new Date().getFullYear()} AquaLab. All rights reserved.</p>
-            <p className="text-xs text-slate-300 font-medium">{CONTACTS.company} | SANAS Approved</p>
+            <p className="text-xs font-medium text-slate-200 max-sm:text-[#b0b0b0]">{CONTACTS.company} | SANAS Approved</p>
           </div>
           <p className="text-center sm:text-right font-medium">Founded by Nurina Patel &amp; Muhammed Halim · Johannesburg, South Africa</p>
         </div>

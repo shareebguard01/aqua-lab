@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { MessageCircle, Send, Loader2, CheckCircle2, AlertCircle, Mail, MapPin, Phone } from 'lucide-react';
-import { CONTACTS, whatsappLink } from '@/lib/contacts';
-import { supabase } from '@/lib/supabase';
+import { CONTACTS, buildWebsiteEnquiryMessage, whatsappLink } from '@/lib/contacts';
 
 type EnquiryType = 'home' | 'bulk' | 'event' | 'other';
 
@@ -27,29 +26,39 @@ export function ContactSection() {
   const update = (key: keyof typeof form, value: string) =>
     setForm((f) => ({ ...f, [key]: value }));
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMsg('');
 
-    try {
-      if (supabase) {
-        await supabase.from('enquiries').insert({
-          name: form.name.trim(),
-          email: form.email.trim() || null,
-          phone: form.phone.trim() || null,
-          enquiry_type: form.enquiry_type,
-          message: form.message.trim(),
-        });
-      }
-    } catch (err) {
-      console.log('Enquiry submission handled:', err);
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const phone = form.phone.trim();
+    const contact = [email, phone].filter(Boolean).join(' · ') || 'Not provided';
+    const enquiryLabel =
+      enquiryTypes.find((t) => t.value === form.enquiry_type)?.label ?? form.enquiry_type;
+    const message = form.message.trim();
+
+    const text = buildWebsiteEnquiryMessage({
+      name,
+      contact,
+      enquiryLabel,
+      message,
+    });
+
+    const url = whatsappLink(CONTACTS.nurina.phoneRaw, text);
+    const opened = window.open(url, '_blank', 'noopener,noreferrer');
+
+    if (!opened) {
+      setStatus('error');
+      setErrorMsg(
+        'Your browser blocked the WhatsApp window. Please allow pop-ups for this site, or tap Nurina\'s WhatsApp card on the left.',
+      );
+      return;
     }
 
-    setTimeout(() => {
-      setStatus('success');
-      setForm({ name: '', email: '', phone: '', enquiry_type: 'home', message: '' });
-    }, 400);
+    setForm({ name: '', email: '', phone: '', enquiry_type: 'home', message: '' });
+    setStatus('success');
   };
 
   return (
@@ -73,7 +82,7 @@ export function ContactSection() {
           <div className="reveal lg:col-span-2" data-delay="80">
             <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur">
               <h3 className="text-xl font-extrabold text-white">Chat to us instantly</h3>
-              <p className="mt-2 text-sm text-slate-200 font-medium">Tap a founder below to open WhatsApp.</p>
+              <p className="mt-2 text-sm font-medium text-slate-200 max-sm:text-[#b0b0b0]">Tap a founder below to open WhatsApp.</p>
 
               <div className="mt-6 space-y-4">
                 {founders.map((f) => (
@@ -89,7 +98,7 @@ export function ContactSection() {
                     </span>
                     <div className="min-w-0">
                       <p className="font-bold text-white">{f.name}</p>
-                      <p className="text-sm text-slate-200 font-medium">{f.role} · {f.phone}</p>
+                      <p className="text-sm font-medium text-slate-200 max-sm:text-[#b0b0b0]">{f.role} · {f.phone}</p>
                     </div>
                     <span className="ml-auto text-xs font-extrabold uppercase tracking-wide text-[#25D366]">Chat</span>
                   </a>
@@ -119,9 +128,9 @@ export function ContactSection() {
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-14 text-center">
                   <CheckCircle2 className="h-16 w-16 text-white neon-glow" />
-                  <h3 className="display-head mt-5 text-3xl text-white">Message Sent!</h3>
+                  <h3 className="display-head mt-5 text-3xl text-white">Opening WhatsApp…</h3>
                   <p className="mt-3 max-w-sm text-slate-100 font-medium">
-                    Thanks for reaching out — we'll get back to you shortly. Want a faster reply? Tap one of our WhatsApp contacts.
+                    Your enquiry is ready in WhatsApp to {CONTACTS.nurina.name}. Send the pre-filled message there to complete your request.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
@@ -216,7 +225,7 @@ export function ContactSection() {
                     {status === 'loading' ? (
                       <><Loader2 className="h-5 w-5 animate-spin" /> Sending…</>
                     ) : (
-                      <>Send Enquiry <Send className="h-5 w-5 transition-transform group-hover:translate-x-1" /></>
+                      <>Send via WhatsApp <Send className="h-5 w-5 transition-transform group-hover:translate-x-1" /></>
                     )}
                   </button>
                 </form>

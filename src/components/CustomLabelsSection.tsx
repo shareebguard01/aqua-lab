@@ -56,9 +56,13 @@ export function CustomLabelsSection() {
         </div>
 
         {/* Clean Bottle Display with Ambient White Glow */}
-        <div className="reveal card-interactive relative flex items-center justify-center py-2 sm:py-4" data-delay="200">
-          {/* Subtle, ambient pure-white radial glow/pulse effect behind high-res bottle */}
-          <div className="bottle-glow-pulse absolute h-[22rem] w-[22rem] rounded-full pointer-events-none sm:h-[34rem] sm:w-[34rem]" />
+        <div className="reveal bottle-feature-stage relative flex items-center justify-center overflow-visible border-0 bg-transparent py-0 shadow-none sm:py-4" data-delay="200">
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center" aria-hidden>
+            <div className="bottle-glow-cyan-outer h-[22rem] w-[22rem] rounded-full sm:h-[38rem] sm:w-[38rem]" />
+          </div>
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center" aria-hidden>
+            <div className="bottle-glow-cyan h-[20rem] w-[20rem] rounded-full sm:h-[34rem] sm:w-[34rem]" />
+          </div>
 
           {/* Floating sample swatches */}
           <div className="absolute -left-2 top-8 hidden rounded-2xl glass px-4 py-3 shadow-glass border border-white/20 sm:block animate-floatSlow z-20">
@@ -78,7 +82,7 @@ export function CustomLabelsSection() {
           <img
             src="/aqualab_bottle_clean.png"
             alt="AquaLab Custom Bottle"
-            className="relative z-10 w-auto h-[78vh] min-h-[380px] max-h-[540px] sm:max-h-none sm:h-[38rem] lg:h-[42rem] object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.4)] transition-transform duration-700 hover:scale-105"
+            className="bottle-feature-img relative z-10 w-auto object-contain sm:h-[38rem] sm:max-h-none lg:h-[42rem] drop-shadow-[0_0_35px_rgba(255,255,255,0.4)] transition-transform duration-700 hover:scale-105"
           />
         </div>
       </div>

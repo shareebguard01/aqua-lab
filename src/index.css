@@ -8,6 +8,7 @@
   --bg-base: #0a0a0c;
   --bg-card: #121215;
   --text-light: #f4f4f5;
+  --ice-cyan: #00e5ff;
 }
 
 * {
@@ -77,6 +78,112 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Hero accent line — high contrast ice cyan on obsidian */
+.text-cyan-accent {
+  color: var(--ice-cyan);
+  text-shadow:
+    0 0 18px rgba(0, 229, 255, 0.55),
+    0 0 36px rgba(0, 229, 255, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Cyan radiating glow behind hero / feature bottles */
+.bottle-glow-cyan {
+  background: radial-gradient(
+    circle at 50% 52%,
+    rgba(0, 229, 255, 0.42) 0%,
+    rgba(0, 196, 220, 0.22) 32%,
+    rgba(0, 140, 180, 0.1) 52%,
+    transparent 72%
+  );
+  animation: bottleCyanPulse 4.5s ease-in-out infinite;
+}
+
+.bottle-glow-cyan-outer {
+  background: radial-gradient(
+    circle at 50% 52%,
+    rgba(0, 229, 255, 0.12) 0%,
+    rgba(0, 180, 210, 0.06) 45%,
+    transparent 68%
+  );
+  filter: blur(28px);
+  animation: bottleCyanPulse 4.5s ease-in-out infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes bottleCyanPulse {
+  0%,
+  100% {
+    transform: scale(0.88);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 1;
+  }
+}
+
+/* Hero bottle — dominant focal point on small screens */
+.hero-bottle-stage {
+  overflow: visible;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 639px) {
+  .hero-bottle-stage {
+    min-height: clamp(26rem, 82vh, 40rem);
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero-bottle-stage .bottle-glow-cyan {
+    width: min(108vw, 30rem);
+    height: min(108vw, 34rem);
+  }
+
+  .hero-bottle-stage .bottle-glow-cyan-outer {
+    width: min(115vw, 34rem);
+    height: min(115vw, 38rem);
+  }
+
+  .hero-bottle-img {
+    width: min(98vw, 28rem);
+    height: auto;
+    max-height: min(85vh, 40rem);
+    min-height: 0;
+  }
+}
+
+/* Featured bottle (custom labels, etc.) — larger on narrow viewports */
+@media (max-width: 639px) {
+  .bottle-feature-stage:not(.hero-bottle-stage) {
+    padding-top: 0;
+    padding-bottom: 0.25rem;
+    min-height: clamp(20rem, 72vw, 26rem);
+    overflow: visible;
+  }
+
+  .bottle-feature-stage:not(.hero-bottle-stage) .bottle-glow-pulse {
+    width: min(92vw, 24rem);
+    height: min(92vw, 24rem);
+  }
+
+  .bottle-feature-stage:not(.hero-bottle-stage) .bottle-feature-img:not(.hero-bottle-img) {
+    width: min(92vw, 24rem);
+    height: auto;
+    max-height: min(75vh, 30rem);
+    min-height: 0;
+  }
+
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+  }
 }
 
 /* Soft pure-white radial glow behind bottle */

@@ -74,7 +74,7 @@ export function LabSpecsSection() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-200 max-sm:text-[#b0b0b0]">
                     {spec.label}
                   </span>
                   <CheckCircle2 className="h-4 w-4 text-white opacity-90" />
@@ -92,7 +92,7 @@ export function LabSpecsSection() {
                   {spec.status}
                 </span>
                 {spec.note && (
-                  <span className="text-[11px] font-semibold text-slate-200">
+                  <span className="text-[11px] font-semibold text-slate-200 max-sm:text-[#b0b0b0]">
                     {spec.note}
                   </span>
                 )}

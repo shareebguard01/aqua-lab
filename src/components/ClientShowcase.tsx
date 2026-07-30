@@ -116,7 +116,7 @@ export function ClientShowcase() {
 
               {/* Card content */}
               <div className="p-7">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-200 max-sm:text-[#b0b0b0]">
                   {client.category}
                 </span>
                 <h3 className="mt-2 text-2xl font-extrabold text-white">

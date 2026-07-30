@@ -25,3 +25,16 @@ export const CONTACTS = {
 export function whatsappLink(phoneRaw: string, message: string) {
   return `https://wa.me/${phoneRaw}?text=${encodeURIComponent(message)}`;
 }
+
+export function buildWebsiteEnquiryMessage(params: {
+  name: string;
+  contact: string;
+  enquiryLabel: string;
+  message: string;
+}) {
+  return `Hello AquaLab! I would like to make an inquiry from the website:
+- Name: ${params.name}
+- Contact: ${params.contact}
+- Product Size: ${params.enquiryLabel}
+- Message: ${params.message}`;
+}

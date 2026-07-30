@@ -9,16 +9,16 @@ export function Hero() {
       {/* Top gradient wash */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:gap-14 px-5 sm:px-8 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 sm:gap-10 lg:gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Copy */}
         <div className="relative z-10 text-center lg:text-left">
           <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4.5 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20 shadow-neon">
             <Droplet className="h-3.5 w-3.5 text-white" fill="currentColor" /> EST. 2024 · Johannesburg, South Africa
           </span>
 
-          <h1 className="reveal display-head mt-6 text-5xl text-white sm:text-6xl lg:text-7xl xl:text-8xl" data-delay="80">
+          <h1 className="reveal display-head mt-5 text-4xl text-white sm:mt-6 sm:text-6xl lg:text-7xl xl:text-8xl" data-delay="80">
             Life Starts<br />
-            <span className="text-white-gradient drop-shadow-[0_2px_10px_rgba(255,255,255,0.35)]">With Clean</span><br />
+            <span className="text-cyan-accent">With Clean</span><br />
             Water
           </h1>
 
@@ -52,18 +52,23 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Hero bottle stage */}
-        <div className="relative flex items-center justify-center py-2 sm:py-6">
-          {/* Soft ambient pure-white radial glow directly behind the bottle */}
-          <div className="bottle-glow-pulse absolute h-[22rem] w-[22rem] sm:h-[40rem] sm:w-[40rem] rounded-full pointer-events-none" />
+        {/* Hero bottle — floats freely, no card/box wrapper */}
+        <div className="hero-bottle-stage relative flex w-full items-center justify-center overflow-visible py-2 sm:py-8 lg:py-6">
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center" aria-hidden>
+            <div className="bottle-glow-cyan-outer h-[28rem] w-[28rem] rounded-full sm:h-[46rem] sm:w-[46rem]" />
+          </div>
+          <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center" aria-hidden>
+            <div className="bottle-glow-cyan h-[24rem] w-[24rem] rounded-full sm:h-[40rem] sm:w-[40rem]" />
+          </div>
 
-          {/* Enlarged bottle asset with prominent drop shadow, sleek -8 deg rotation & floating animation */}
-          <div className="animate-float -rotate-8 transform transition-transform duration-500 hover:-rotate-6 w-full flex justify-center">
-            <img
-              src="/aqualab_bottle_clean.png"
-              alt="AquaLab Water Bottle"
-              className="relative z-10 w-auto h-[78vh] min-h-[380px] max-h-[580px] sm:max-h-none sm:h-[44rem] lg:h-[50rem] object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.45)] drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)]"
-            />
+          <div className="animate-float relative z-10 flex w-full justify-center">
+            <div className="-rotate-8 transition-transform duration-500 hover:-rotate-6">
+              <img
+                src="/aqualab_bottle_clean.png"
+                alt="AquaLab Water Bottle"
+                className="hero-bottle-img relative z-10 w-auto max-w-[98vw] object-contain sm:h-[48rem] sm:max-h-none lg:h-[54rem] drop-shadow-[0_0_45px_rgba(0,229,255,0.35)] drop-shadow-[0_24px_60px_rgba(0,180,220,0.2)]"
+              />
+            </div>
           </div>
 
           {/* floating mini badges */}

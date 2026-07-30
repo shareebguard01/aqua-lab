@@ -48,7 +48,7 @@ export function AboutSection() {
                   </span>
                   <div className="min-w-0">
                     <p className="font-bold text-white">{f.name}</p>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-200">{f.role}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-200 max-sm:text-[#b0b0b0]">{f.role}</p>
                     <p className="mt-0.5 text-sm text-slate-100 font-semibold">{f.phone}</p>
                   </div>
                 </div>
