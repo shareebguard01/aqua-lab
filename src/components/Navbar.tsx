@@ -81,7 +81,7 @@ export function Navbar() {
       </nav>
 
       {/* Mobile tagline banner */}
-      <div className="block sm:hidden px-5 pt-1 text-[11.5px] text-center font-semibold text-slate-100 tracking-normal">
+      <div className="mx-auto flex w-full flex-col items-center justify-center px-5 pt-1 text-center text-[11.5px] font-semibold tracking-normal text-slate-100 sm:hidden">
         Water is the only thing you should taste in water
       </div>
 
