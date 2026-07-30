@@ -4,7 +4,7 @@ import { CONTACTS } from '@/lib/contacts';
 const LOGO = '/Untitled_design_20260726_210210_0000.png';
 
 const socials = [
-  { icon: Instagram, label: 'Instagram', href: '#' },
+  { icon: Instagram, label: 'Instagram', href: CONTACTS.instagram },
   { icon: Facebook, label: 'Facebook', href: '#' },
   { icon: Linkedin, label: 'LinkedIn', href: '#' },
 ];
@@ -12,13 +12,14 @@ const socials = [
 const nav = [
   { label: 'Shop', href: '#products' },
   { label: 'About', href: '#about' },
+  { label: 'Portfolio', href: '#client-showcase' },
   { label: 'Custom Labels', href: '#custom-labels' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink-950 text-zinc-300 border-t border-zinc-800/80">
+    <footer className="relative overflow-hidden bg-ink-950 text-zinc-200 border-t border-zinc-800/80">
       {/* top wave — dark with white glow outline */}
       <div className="absolute -top-px left-0 w-full">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="h-12 w-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -41,19 +42,21 @@ export function Footer() {
                 <span className="display-head text-3xl text-white">
                   Aqua<span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Lab</span>
                 </span>
-                <span className="text-xs font-medium text-zinc-400">
+                <span className="text-xs font-medium text-zinc-300">
                   Water is the only thing you should taste in water
                 </span>
               </div>
             </a>
-            <p className="mt-5 max-w-sm text-sm text-zinc-400 leading-relaxed">
-              Life starts with clean water. Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source.
+            <p className="mt-5 max-w-sm text-sm text-zinc-300 leading-relaxed font-normal">
+              Life starts with clean water. Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source. EST. 2024.
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
+                  target={s.href.startsWith('http') ? '_blank' : undefined}
+                  rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   aria-label={s.label}
                   className="grid h-10 w-10 place-items-center rounded-xl border border-white/30 bg-white/5 text-white transition-all hover:bg-white/15 hover:shadow-neon hover:scale-110"
                 >

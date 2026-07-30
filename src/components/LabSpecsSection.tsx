@@ -32,7 +32,7 @@ export function LabSpecsSection() {
             Lab Quality &amp; Nutritional Specs
           </h2>
 
-          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
             Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source. Every batch is rigorously tested for maximum safety and crisp taste.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function LabSpecsSection() {
                     National Standard
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-slate-300">
+                <p className="mt-1 text-sm text-slate-200">
                   South African National Accreditation System — Batch Certified &amp; Continuously Tested.
                 </p>
               </div>
@@ -74,7 +74,7 @@ export function LabSpecsSection() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
                     {spec.label}
                   </span>
                   <CheckCircle2 className="h-4 w-4 text-white opacity-80" />
@@ -88,11 +88,11 @@ export function LabSpecsSection() {
               </div>
 
               <div className="mt-6 border-t border-white/10 pt-4 flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
                   {spec.status}
                 </span>
                 {spec.note && (
-                  <span className="text-[11px] font-medium text-slate-400">
+                  <span className="text-[11px] font-medium text-slate-300">
                     {spec.note}
                   </span>
                 )}

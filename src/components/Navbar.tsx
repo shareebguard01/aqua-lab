@@ -42,7 +42,7 @@ export function Navbar() {
             <span className="display-head text-2xl sm:text-3xl text-white tracking-wide">
               Aqua<span className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">Lab</span>
             </span>
-            <span className="text-[11px] font-medium tracking-tight text-zinc-400 leading-tight hidden sm:block">
+            <span className="text-[11px] font-medium tracking-tight text-zinc-300 leading-tight hidden sm:block">
               Water is the only thing you should taste in water
             </span>
           </div>
@@ -53,7 +53,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-zinc-300 transition-all hover:text-white hover:neon-text"
+                className="rounded-full px-4 py-2 text-sm font-semibold text-zinc-200 transition-all hover:text-white hover:neon-text"
               >
                 {l.label}
               </a>
@@ -81,7 +81,7 @@ export function Navbar() {
       </nav>
 
       {/* Mobile tagline banner */}
-      <div className="block sm:hidden px-5 pt-1 text-[11px] text-center font-medium text-zinc-400">
+      <div className="block sm:hidden px-5 pt-1 text-[11px] text-center font-medium text-zinc-300">
         Water is the only thing you should taste in water
       </div>
 

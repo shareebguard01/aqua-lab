@@ -41,7 +41,7 @@ export function AudienceSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             However You Pour It
           </h2>
-          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
             From your morning glass to a boardroom dispenser to a thousand wedding favours — there's an AquaLab for that.
           </p>
         </div>
@@ -65,7 +65,7 @@ export function AudienceSection() {
                 <span className="mt-2 inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
                   {c.tag}
                 </span>
-                <p className="mt-4 text-base leading-relaxed text-slate-300">{c.desc}</p>
+                <p className="mt-4 text-base leading-relaxed text-slate-200 font-normal">{c.desc}</p>
 
                 <a
                   href={c.href}

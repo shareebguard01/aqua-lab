@@ -11,13 +11,14 @@ type Product = {
   custom?: { label: string; sublabel?: string; customLabelColor?: string };
   bottle: 'small' | 'dispenser';
   badge?: string;
+  image?: string;
 };
 
 const products: Product[] = [
-  { name: 'Still Water', size: '500ml', desc: 'Our everyday still water — pure, crisp and perfectly portable.', tag: 'Everyday', variant: 'blue', bottle: 'small', custom: { label: 'AquaLab', sublabel: '500ml' } },
-  { name: 'Slim Bottle', size: '350ml', desc: 'Slim and light — ideal for handbags, lunchboxes and on-the-go sips.', tag: 'On-the-go', variant: 'clear', bottle: 'small', custom: { label: 'AquaLab', sublabel: '350ml' } },
+  { name: 'Still Water', size: '500ml', desc: 'Our everyday still water — pure, crisp and perfectly portable.', tag: 'Everyday', variant: 'blue', bottle: 'small', custom: { label: 'AquaLab', sublabel: '500ml' }, image: '/500ml-bottle.png' },
+  { name: 'Slim Bottle', size: '350ml', desc: 'Slim and light — ideal for handbags, lunchboxes and on-the-go sips.', tag: 'On-the-go', variant: 'clear', bottle: 'small', custom: { label: 'AquaLab', sublabel: '350ml' }, image: '/350ml-bottle.png' },
   { name: 'Family Jug', size: '1.5L', desc: 'The family fridge favourite — enough for the table and the road.', tag: 'Family', variant: 'blue', bottle: 'small', custom: { label: 'AquaLab', sublabel: '1.5L' }, badge: 'Popular' },
-  { name: 'Big Jug', size: '5L', desc: 'Bulk drinking water for the home — great value, great taste.', tag: 'Home Bulk', variant: 'clear', bottle: 'small', custom: { label: 'AquaLab', sublabel: '5L' } },
+  { name: 'Big Jug', size: '5L', desc: 'Bulk drinking water for the home — great value, great taste.', tag: 'Home Bulk', variant: 'clear', bottle: 'small', custom: { label: 'AquaLab', sublabel: '5L' }, image: '/5l-jug.png' },
   { name: 'Dispenser Bottle', size: '18L', desc: 'Large-format bottle for water dispensers in offices and homes.', tag: 'Dispenser', variant: 'blue', bottle: 'dispenser', badge: 'Bulk' },
   { name: 'Flavored Water', size: '500ml', desc: 'A refreshing twist — lightly flavoured hydration with natural taste.', tag: 'Flavored', variant: 'flavored', bottle: 'small', custom: { label: 'AquaLab', sublabel: 'Citrus' }, badge: 'New' },
   { name: 'Carbonated Water', size: '500ml', desc: 'Crisp sparkling hydration — perfect bubbles, zero sugar.', tag: 'Sparkling', variant: 'carbonated', bottle: 'small', custom: { label: 'AquaLab', sublabel: 'Sparkling' } },
@@ -35,10 +36,10 @@ export function ProductsSection() {
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Find Your Size
           </h2>
-          <p className="reveal mt-4 text-lg text-slate-300" data-delay="160">
+          <p className="reveal mt-4 text-lg text-slate-200 font-medium" data-delay="160">
             From pocket-sized still water to office-grade 18L dispensers — plus flavoured and sparkling favourites.
           </p>
-          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-400 sm:hidden">
+          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-300 sm:hidden">
             ← Swipe to view sizes →
           </p>
         </div>
@@ -60,7 +61,13 @@ export function ProductsSection() {
               {/* Bottle stage */}
               <div className="relative mx-auto flex h-72 sm:h-80 items-center justify-center py-4">
                 <div className="bottle-glow absolute h-60 w-60 sm:h-64 sm:w-64 rounded-full opacity-75 transition-all group-hover:scale-110 group-hover:opacity-95" />
-                {p.bottle === 'dispenser' ? (
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={`${p.name} (${p.size})`}
+                    className="relative z-10 h-64 sm:h-72 w-auto max-w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : p.bottle === 'dispenser' ? (
                   <DispenserBottle className="relative z-10 h-60 sm:h-68 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <WaterBottle
@@ -79,11 +86,11 @@ export function ProductsSection() {
                     {p.tag}
                   </span>
                   <h3 className="mt-3 text-2xl font-extrabold text-white">{p.name}</h3>
-                  <p className="text-sm font-bold uppercase tracking-wider text-slate-300">{p.size}</p>
+                  <p className="text-sm font-bold uppercase tracking-wider text-slate-200">{p.size}</p>
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">{p.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-200 font-normal">{p.desc}</p>
 
               <a
                 href={whatsappLink(

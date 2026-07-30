@@ -56,7 +56,7 @@ const clientCases: ClientItem[] = [
     title: 'Weddings & Private Galas',
     category: 'Weddings & Celebrations',
     tag: 'Event Bottling',
-    image: '/client-1.png',
+    image: '/event-bottle.png',
     description: 'Personalized branded bottles for weddings, anniversaries, and exclusive private galas with custom foil finishes.',
   },
 ];

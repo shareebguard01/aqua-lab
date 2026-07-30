@@ -2,7 +2,7 @@ import { Sparkles, ArrowRight, Check } from 'lucide-react';
 import { WaveDivider } from './WaveDivider';
 
 // Established date placeholder — easily update this value when finalizing established date
-export const ESTABLISHED_DATE = 'Est. 2026';
+export const ESTABLISHED_DATE = 'Est. 2024';
 
 const features = [
   'Your logo, names or event artwork on every bottle',
@@ -21,14 +21,14 @@ export function CustomLabelsSection() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Copy */}
         <div>
-          <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20">
-            <Sparkles className="h-3.5 w-3.5 text-white" /> Custom Labels
+          <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur border border-white/20 shadow-neon">
+            <Sparkles className="h-3.5 w-3.5 text-white" /> Custom Labels · EST. 2024
           </span>
           <h2 className="reveal display-head mt-5 text-4xl text-white sm:text-5xl lg:text-6xl" data-delay="80">
             Make Your Event<br />
             <span className="text-white-gradient drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">Memorable</span>
           </h2>
-          <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-300" data-delay="160">
+          <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-200 font-medium" data-delay="160">
             Custom-labeled AquaLab water for weddings, conferences and corporate
             gifting. Your brand on every bottle — a small detail your guests will
             actually remember.
@@ -36,7 +36,7 @@ export function CustomLabelsSection() {
 
           <ul className="reveal mt-8 grid gap-3 sm:grid-cols-2" data-delay="240">
             {features.map((f) => (
-              <li key={f} className="flex items-start gap-3 text-sm text-slate-300">
+              <li key={f} className="flex items-start gap-3 text-sm text-slate-200 font-medium">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white shadow-neon">
                   <Check className="h-3 w-3 text-black" strokeWidth={3} />
                 </span>

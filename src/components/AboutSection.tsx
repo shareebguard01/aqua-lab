@@ -8,7 +8,7 @@ const founders = [
     name: 'Nurina Patel',
     initial: 'N',
     role: 'Co-Founder',
-    phone: '082 555 4498',
+    phone: '082 855 4498',
   },
   {
     name: 'Muhammed Halim',
@@ -29,7 +29,7 @@ export function AboutSection() {
         {/* Founders card */}
         <div className="reveal relative">
           <div className="card-interactive rounded-4xl border border-white/20 bg-ink-800/80 p-8 sm:p-10 shadow-glow backdrop-blur">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white neon-text">Founded in Johannesburg</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white neon-text">EST. 2024 · Johannesburg</p>
             <h3 className="display-head mt-2 text-3xl text-white sm:text-4xl">Meet The Founders</h3>
 
             {/* Logo mark */}
@@ -48,15 +48,15 @@ export function AboutSection() {
                   </span>
                   <div className="min-w-0">
                     <p className="font-bold text-white">{f.name}</p>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{f.role}</p>
-                    <p className="mt-0.5 text-sm text-slate-300">{f.phone}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">{f.role}</p>
+                    <p className="mt-0.5 text-sm text-slate-200 font-medium">{f.phone}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 text-base leading-relaxed text-slate-300">
-              Born and raised in Johannesburg, Nurina and Muhammed set out to make
+            <p className="mt-6 text-base leading-relaxed text-slate-200 font-normal">
+              Founded in 2024 in Johannesburg, Nurina and Muhammed set out to make
               Prepared Pure Water via Advanced Reverse Osmosis — Bottled at the Source — accessible to every South African community.
             </p>
           </div>
