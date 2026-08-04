@@ -73,6 +73,10 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        cyanGlowPulse: {
+          '0%, 100%': { transform: 'scale(0.9)', opacity: '0.5' },
+          '50%': { transform: 'scale(1.1)', opacity: '0.95' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
@@ -80,6 +84,7 @@ export default {
         blob: 'blob 18s ease-in-out infinite',
         waveMove: 'waveMove 20s linear infinite',
         riseIn: 'riseIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards',
+        cyanGlowPulse: 'cyanGlowPulse 4.5s ease-in-out infinite',
       },
     },
   },

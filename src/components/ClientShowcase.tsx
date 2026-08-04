@@ -71,10 +71,9 @@ export function ClientShowcase() {
       <div className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 right-1/4 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="reveal neon-border-soft inline-flex items-center gap-2 rounded-full bg-ink-800/80 px-4.5 py-2 text-xs font-bold uppercase tracking-widest text-white backdrop-blur border border-white/20 shadow-neon">
+      <div className="section-container relative">
+        <div className="section-header">
+          <span className="reveal glass-card neon-border-soft inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest text-white shadow-neon">
             <Sparkles className="h-4 w-4 text-white" /> PROVEN QUALITY &amp; BESPOKE BRANDING
           </span>
 
@@ -82,17 +81,16 @@ export function ClientShowcase() {
             Trusted by Premier Brands &amp; Elite Events
           </h2>
 
-          <p className="reveal mt-5 text-lg leading-relaxed text-slate-100 font-medium" data-delay="160">
+          <p className="reveal mt-5 text-lg font-medium leading-relaxed text-slate-300" data-delay="160">
             From luxury automotive dealerships to fitness studios and private celebrations, see how we bring custom branding to life on premium water bottles.
           </p>
         </div>
 
-        {/* Interactive Portfolio Grid */}
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {clientCases.map((client, index) => (
             <article
               key={client.id}
-              className="reveal card-interactive group relative overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow"
+              className="reveal card-interactive glass-card group relative overflow-hidden rounded-4xl transform-gpu will-change-transform transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60"
               data-delay={String((index % 3) * 100)}
             >
               {/* Image container with scale & hover overlay */}
@@ -116,13 +114,13 @@ export function ClientShowcase() {
 
               {/* Card content */}
               <div className="p-7">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-200 max-sm:text-[#b0b0b0]">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-300">
                   {client.category}
                 </span>
-                <h3 className="mt-2 text-2xl font-extrabold text-white">
+                <h3 className="mt-2 text-2xl font-extrabold text-white drop-shadow-sm">
                   {client.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-100 font-normal">
+                <p className="mt-3 text-sm font-normal leading-relaxed text-slate-300">
                   {client.description}
                 </p>
               </div>
@@ -130,17 +128,16 @@ export function ClientShowcase() {
           ))}
         </div>
 
-        {/* Custom Bottling Enquiry Banner */}
-        <div className="reveal mt-16 rounded-4xl border border-white/30 bg-gradient-to-r from-ink-800 via-ink-800/90 to-ink-950 p-8 sm:p-12 shadow-glow backdrop-blur" data-delay="200">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+        <div className="reveal glass-card mt-16 rounded-4xl p-8 sm:p-12" data-delay="200">
+          <div className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-neon">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-600/60 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-neon">
                 <ShieldCheck className="h-4 w-4 text-white" /> Turnkey Bottling Solutions
               </div>
-              <h3 className="display-head mt-4 text-3xl sm:text-4xl lg:text-5xl text-white">
+              <h3 className="display-head mt-4 text-3xl text-white sm:text-4xl lg:text-5xl">
                 Want Your Brand on Our Bottles?
               </h3>
-              <p className="mt-3 text-base sm:text-lg text-slate-100 font-medium">
+              <p className="mt-3 text-base font-medium text-slate-300 sm:text-lg">
                 Low minimum order quantities, fast turnaround, and custom label finishes (Gloss, Matte, Metallic).
               </p>
             </div>

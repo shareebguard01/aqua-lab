@@ -7,6 +7,7 @@ const links = [
   { label: 'Home', href: '#hero' },
   { label: 'Shop', href: '#products' },
   { label: 'About', href: '#about' },
+  { label: 'Dealership', href: '#dealership' },
   { label: 'Portfolio', href: '#client-showcase' },
   { label: 'Events', href: '#custom-labels' },
   { label: 'Contact', href: '#contact' },
@@ -29,7 +30,7 @@ export function Navbar() {
         scrolled ? 'glass py-3 border-b border-zinc-800/80 shadow-2xl' : 'bg-transparent py-4'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
+      <nav className="section-container flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3.5 group">
           <span className="logo-halo relative grid h-14 w-14 shrink-0 place-items-center">
             <img

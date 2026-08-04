@@ -30,16 +30,16 @@ export function ProductsSection() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="section-container relative">
+        <div className="section-header">
           <p className="reveal text-sm font-bold uppercase tracking-[0.2em] text-white neon-text">Our Products</p>
           <h2 className="reveal display-head mt-3 text-4xl text-white sm:text-5xl" data-delay="80">
             Find Your Size
           </h2>
-          <p className="reveal mt-4 text-lg text-slate-100 font-medium" data-delay="160">
+          <p className="reveal mt-4 text-lg font-medium text-slate-300" data-delay="160">
             From pocket-sized still water to office-grade 18L dispensers — plus flavoured and sparkling favourites.
           </p>
-          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-100 sm:hidden">
+          <p className="reveal mt-2 text-xs font-bold uppercase tracking-wider text-slate-300 sm:hidden">
             ← Swipe to view sizes →
           </p>
         </div>
@@ -49,7 +49,7 @@ export function ProductsSection() {
           {products.map((p, i) => (
             <article
               key={p.name}
-              className="reveal card-interactive group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center overflow-hidden rounded-4xl border border-white/20 bg-ink-800/80 p-7 shadow-glass backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-glow sm:min-w-0 sm:max-w-none sm:shrink-1"
+              className="reveal card-interactive glass-card group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center overflow-hidden rounded-4xl p-7 transform-gpu will-change-transform transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60 sm:min-w-0 sm:max-w-none sm:shrink-1"
               data-delay={String((i % 3) * 100)}
             >
               {p.badge && (
@@ -90,7 +90,7 @@ export function ProductsSection() {
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-100 font-normal">{p.desc}</p>
+              <p className="mt-3 text-sm font-normal leading-relaxed text-slate-300">{p.desc}</p>
 
               <a
                 href={whatsappLink(
@@ -108,11 +108,11 @@ export function ProductsSection() {
           ))}
 
           {/* CTA tile */}
-          <div className="reveal card-interactive group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center flex flex-col items-center justify-center overflow-hidden rounded-4xl border border-white/30 bg-gradient-to-br from-ink-800 to-ink-950 p-8 text-center text-white shadow-glow transition-all duration-500 hover:-translate-y-2 sm:min-w-0 sm:max-w-none sm:shrink-1" data-delay="200">
+          <div className="reveal card-interactive glass-card group relative flex min-w-[82vw] max-w-[310px] shrink-0 snap-center flex-col items-center justify-center overflow-hidden rounded-4xl p-8 text-center text-white transform-gpu will-change-transform transition-all duration-500 hover:-translate-y-2 sm:min-w-0 sm:max-w-none sm:shrink-1" data-delay="200">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
-            <h3 className="relative display-head text-3xl sm:text-4xl text-white">Can't See Your Size?</h3>
-            <p className="relative mt-3 text-slate-100 font-medium">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
+            <h3 className="relative display-head text-3xl text-white sm:text-4xl">Can't See Your Size?</h3>
+            <p className="relative mt-3 font-medium text-slate-300">We bottle for every need. Tell us what you're after and we'll make it happen.</p>
             <a
               href="#contact"
               className="btn-cyan relative mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide shadow-neon"

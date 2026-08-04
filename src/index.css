@@ -24,8 +24,22 @@ html {
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   background-color: #0a0a0c;
-  color: #e2e8f0;
+  color: #f1f5f9; /* slate-100 — high-contrast body default */
   overflow-x: hidden;
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-header {
+    @apply mx-auto flex max-w-4xl flex-col items-center justify-center text-center;
+  }
+
+  .glass-card {
+    @apply border border-slate-700/50 bg-slate-900/80 shadow-xl backdrop-blur-md;
+  }
 }
 
 /* Hide scrollbar for horizontal product slider */
@@ -42,33 +56,41 @@ body {
   color: #0a0a0c;
 }
 
-/* Reveal on scroll */
+/* Reveal on scroll — GPU-accelerated, one-shot via IntersectionObserver */
 .reveal {
   opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 36px, 0);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+}
+.reveal.is-visible.reveal-settled {
+  will-change: auto;
 }
 
-/* Chunky display heading helper */
+/* Chunky display heading helper — crisp white with depth */
 .display-head {
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
   line-height: 0.95;
   letter-spacing: 0.005em;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.18), 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 
-/* Dark obsidian glass card */
+/* Readable glassmorphism surface */
 .glass {
-  background: rgba(18, 18, 21, 0.75);
-  backdrop-filter: blur(18px) saturate(120%);
-  -webkit-backdrop-filter: blur(18px) saturate(120%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(15, 23, 42, 0.8); /* slate-900/80 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700/50 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
 /* Neon white text gradient with crisp contrast */
@@ -348,6 +370,12 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+    will-change: auto;
+  }
+  .bottle-glow-cyan,
+  .bottle-glow-cyan-outer,
+  .bottle-glow-pulse {
+    animation: none !important;
   }
   html {
     scroll-behavior: auto;
