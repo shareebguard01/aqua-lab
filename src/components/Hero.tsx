@@ -60,7 +60,7 @@ export function Hero() {
               <ShieldCheck className="h-4 w-4 text-white" /> Reverse Osmosis Purity
             </span>
             <span className="inline-flex items-center gap-2">
-              <Leaf className="h-4 w-4 text-white" /> SANAS Approved
+              <Leaf className="h-4 w-4 text-white" /> SANAS Compliant
             </span>
             <span className="inline-flex items-center gap-2">
               <Droplet className="h-4 w-4 text-white" fill="currentColor" /> Bottled at the Source

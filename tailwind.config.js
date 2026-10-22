@@ -32,7 +32,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Anton', 'system-ui', 'sans-serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {

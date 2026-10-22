@@ -7,6 +7,7 @@ const links = [
   { label: 'Home', href: '#hero' },
   { label: 'Shop', href: '#products' },
   { label: 'About', href: '#about' },
+  { label: 'Birthdays', href: '#birthdays' },
   { label: 'Dealership', href: '#dealership' },
   { label: 'Portfolio', href: '#client-showcase' },
   { label: 'Events', href: '#custom-labels' },
@@ -40,8 +41,8 @@ export function Navbar() {
             />
           </span>
           <div className="flex flex-col justify-center">
-            <span className="display-head text-2xl sm:text-3xl text-white tracking-wide">
-              Aqua<span className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">Lab</span>
+            <span className="display-head text-2xl tracking-wide text-white sm:text-3xl">
+              aqua<span className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">lab</span>
             </span>
             <span className="text-[11.5px] font-semibold tracking-normal text-slate-100 leading-tight hidden sm:block">
               Water is the only thing you should taste in water

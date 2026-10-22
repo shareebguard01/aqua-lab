@@ -12,6 +12,7 @@ const socials = [
 const nav = [
   { label: 'Shop', href: '#products' },
   { label: 'About', href: '#about' },
+  { label: 'Birthdays', href: '#birthdays' },
   { label: 'Dealership', href: '#dealership' },
   { label: 'Portfolio', href: '#client-showcase' },
   { label: 'Custom Labels', href: '#custom-labels' },
@@ -41,7 +42,7 @@ export function Footer() {
               </span>
               <div className="flex flex-col">
                 <span className="display-head text-3xl text-white">
-                  Aqua<span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Lab</span>
+                  aqua<span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">lab</span>
                 </span>
                 <span className="text-xs font-semibold text-slate-100 tracking-normal">
                   Water is the only thing you should taste in water
@@ -104,7 +105,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-700/50 pt-6 text-sm text-slate-300 sm:flex-row">
           <div className="flex flex-col gap-1 text-center sm:text-left">
             <p>© {new Date().getFullYear()} AquaLab. All rights reserved.</p>
-            <p className="text-xs font-medium text-slate-300">{CONTACTS.company} | SANAS Approved</p>
+            <p className="text-xs font-medium text-slate-300">{CONTACTS.company} | SANAS Compliant</p>
           </div>
           <p className="text-center font-medium sm:text-right">Founded by Nurina Patel &amp; Muhammed Halim · Johannesburg, South Africa</p>
         </div>

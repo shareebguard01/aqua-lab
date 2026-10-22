@@ -7,6 +7,7 @@ import { ProductsSection } from '@/components/ProductsSection';
 import { WhyAquaLab } from '@/components/WhyAquaLab';
 import { LabSpecsSection } from '@/components/LabSpecsSection';
 import { CustomLabelsSection } from '@/components/CustomLabelsSection';
+import { BirthdaysSection } from '@/components/BirthdaysSection';
 import { DealershipSection } from '@/components/DealershipSection';
 import { ClientShowcase } from '@/components/ClientShowcase';
 import { ContactSection } from '@/components/ContactSection';
@@ -26,6 +27,7 @@ function App() {
         <WhyAquaLab />
         <LabSpecsSection />
         <CustomLabelsSection />
+        <BirthdaysSection />
         <DealershipSection />
         <ClientShowcase />
         <ContactSection />

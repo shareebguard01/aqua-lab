@@ -96,8 +96,8 @@ export function WaterBottle({
       <rect x="62" y="316" width="76" height="14" rx="6" fill="#ffffff" opacity="0.95" />
       {/* Droplet mark */}
       <path d="M100 236 C100 236 88 252 88 262 a12 12 0 0 0 24 0 c0 -10 -12 -26 -12 -26 z" fill="#ffffff" />
-      <text x="100" y="296" textAnchor="middle" fontFamily="Anton, sans-serif" fontSize="13" fill="#ffffff" letterSpacing="0.5">
-        {label.toUpperCase()}
+      <text x="100" y="296" textAnchor="middle" fontFamily="Montserrat, sans-serif" fontSize="12" fontWeight="800" fill="#ffffff" letterSpacing="1.2">
+        {label.toLowerCase()}
       </text>
       {sublabel && (
         <text x="100" y="310" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="7" fill="#a1a1aa" fontWeight="600">
@@ -144,7 +144,7 @@ export function DispenserBottle({ className = '' }: { className?: string }) {
       <rect x="48" y="180" width="144" height="12" rx="8" fill="#ffffff" opacity="0.95" />
       <rect x="48" y="268" width="144" height="12" rx="8" fill="#ffffff" opacity="0.95" />
       <path d="M120 210 C120 210 104 232 104 244 a16 16 0 0 0 32 0 c0 -12 -16 -34 -16 -34 z" fill="#ffffff" />
-      <text x="120" y="262" textAnchor="middle" fontFamily="Anton, sans-serif" fontSize="18" fill="#ffffff" letterSpacing="1">AQUALAB</text>
+      <text x="120" y="262" textAnchor="middle" fontFamily="Montserrat, sans-serif" fontSize="16" fontWeight="800" fill="#ffffff" letterSpacing="1.5">aqualab</text>
       {/* Glossy highlight */}
       <path d="M56 80 q-8 60 0 160 v190" stroke="#ffffff" strokeWidth="7" opacity="0.35" strokeLinecap="round" />
     </svg>

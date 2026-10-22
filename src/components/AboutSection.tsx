@@ -35,7 +35,7 @@ export function AboutSection() {
             <div className="logo-halo mt-6 flex items-center justify-center gap-4 sm:justify-start">
               <img src={LOGO} alt="AquaLab brand mark" className="logo-glow h-14 w-14 object-contain" />
               <span className="display-head text-2xl text-white">
-                Aqua<span className="text-white-gradient drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">Lab</span>
+                aqua<span className="text-white-gradient drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">lab</span>
               </span>
             </div>
 

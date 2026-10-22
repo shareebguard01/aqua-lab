@@ -46,7 +46,7 @@ export function WhyAquaLab() {
               </div>
               <div>
                 <div className="flex items-center justify-center gap-2 sm:justify-start">
-                  <span className="text-sm font-extrabold uppercase tracking-widest text-white">SANAS Approved</span>
+                  <span className="text-sm font-extrabold uppercase tracking-widest text-white">SANAS Compliant</span>
                   <span className="rounded-full border border-slate-600/60 bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase text-white">Certified</span>
                 </div>
                 <p className="mt-1 text-sm font-medium text-slate-300">South African National Accreditation System Standards Compliant</p>

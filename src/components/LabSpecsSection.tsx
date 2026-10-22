@@ -45,7 +45,7 @@ export function LabSpecsSection() {
               </div>
               <div>
                 <div className="flex flex-wrap items-center justify-center gap-2.5 sm:justify-start">
-                  <h3 className="text-xl font-extrabold text-white">SANAS Approved</h3>
+                  <h3 className="text-xl font-extrabold text-white">SANAS Compliant</h3>
                   <span className="rounded-full border border-slate-600/60 bg-white/20 px-3 py-0.5 text-xs font-bold uppercase text-white">
                     National Standard
                   </span>
