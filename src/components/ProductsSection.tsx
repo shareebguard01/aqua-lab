@@ -121,7 +121,7 @@ function resolveProduct(p: Product, edition: Edition): Product {
 }
 
 const cardShell =
-  'card-interactive glass-card group relative w-[82vw] max-w-[340px] shrink-0 snap-center overflow-hidden rounded-4xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60 sm:w-full sm:max-w-none sm:min-w-0';
+  'card-interactive glass-card group relative h-auto w-[82vw] max-w-[340px] shrink-0 snap-center overflow-hidden rounded-4xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60 sm:w-full sm:max-w-none sm:min-w-0';
 
 function ProductVisual({ product, edition }: { product: Product; edition: Edition }) {
   const alt = product.editionScoped
@@ -129,7 +129,7 @@ function ProductVisual({ product, edition }: { product: Product; edition: Editio
     : `AquaLab ${product.name} (${product.size})`;
 
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+    <div className="catalog-visual relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
       {product.image ? (
         <img
           src={product.image}
@@ -222,7 +222,7 @@ export function ProductsSection() {
 
         <div
           ref={carouselRef}
-          className="mt-10 flex min-w-0 w-full max-w-full snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pb-8 pt-2 no-scrollbar touch-pan-x sm:grid sm:grid-cols-2 sm:gap-7 sm:overflow-x-visible sm:touch-auto lg:grid-cols-3"
+          className="catalog-scroll mt-10 flex min-w-0 w-full max-w-full snap-x snap-mandatory gap-5 pb-8 pt-2 no-scrollbar sm:grid sm:grid-cols-2 sm:gap-7 lg:grid-cols-3"
         >
           {catalog.map((p) => (
             <article

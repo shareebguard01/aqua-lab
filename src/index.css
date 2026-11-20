@@ -28,6 +28,29 @@ body {
   overflow-x: hidden;
 }
 
+/* Catalog carousel: horizontal card swipe, vertical page scroll.
+   Tailwind's touch-pan-x and touch-pan-y cannot be combined — both set touch-action. */
+.catalog-scroll {
+  touch-action: pan-x pan-y;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: auto;
+}
+.catalog-scroll > *,
+.catalog-visual {
+  touch-action: pan-x pan-y;
+}
+@media (min-width: 640px) {
+  .catalog-scroll {
+    overflow-x: visible;
+    overflow-y: visible;
+    touch-action: auto;
+  }
+}
+
 @layer components {
   .section-container {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
