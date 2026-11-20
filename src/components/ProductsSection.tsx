@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { WaterBottle, DispenserBottle } from './WaterBottle';
+import { WaterBottle } from './WaterBottle';
 import { CONTACTS, whatsappLink } from '@/lib/contacts';
 
 type Edition = 'classic' | 'primo';
@@ -19,16 +19,16 @@ type Product = {
   editionScoped?: boolean;
 };
 
-const classicImages: Record<string, string> = {
-  '330': '/350ml-bottle.png',
-  '500': '/500ml-bottle.png',
-  '1l': '/aqualab_bottle_clean.png',
+const classicImages: Record<'330' | '500' | '1l', string> = {
+  '330': '/images/classic-330ml.jpg',
+  '500': '/images/classic-500ml.jpg',
+  '1l': '/images/classic-1l.jpg',
 };
 
-const primoImages: Record<string, string> = {
-  '330': '/aqualab_bottle.png',
-  '500': '/aqualab_bottle_clean.png',
-  '1l': '/aqualab_bottle.png',
+const primoImages: Record<'330' | '500' | '1l', string> = {
+  '330': '/images/primo-330ml.jpg',
+  '500': '/images/primo-500ml.jpg',
+  '1l': '/images/primo-1l.jpg',
 };
 
 const editionProducts: Product[] = [
@@ -87,6 +87,7 @@ const extraProducts: Product[] = [
     variant: 'blue',
     bottle: 'dispenser',
     badge: 'Bulk',
+    image: '/images/dispenser-18l.jpg',
   },
   {
     name: 'Carbonated Water',
@@ -119,15 +120,51 @@ function resolveProduct(p: Product, edition: Edition): Product {
   };
 }
 
+const cardShell =
+  'card-interactive glass-card group relative w-[82vw] max-w-[340px] shrink-0 snap-center overflow-hidden rounded-4xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60 sm:w-full sm:max-w-none sm:min-w-0';
+
+function ProductVisual({ product, edition }: { product: Product; edition: Edition }) {
+  const alt = product.editionScoped
+    ? `AquaLab ${product.name} ${edition} edition (${product.size})`
+    : `AquaLab ${product.name} (${product.size})`;
+
+  return (
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+      {product.image ? (
+        <img
+          src={product.image}
+          alt={alt}
+          className="h-full w-full object-cover object-center [mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)]"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center">
+          <WaterBottle
+            variant={product.variant}
+            className="h-[78%] w-auto drop-shadow-2xl"
+            label={product.custom?.label}
+            sublabel={product.custom?.sublabel}
+            customLabelColor={product.custom?.customLabelColor}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function ProductsSection() {
   const [edition, setEdition] = useState<Edition>('classic');
+  const carouselRef = useRef<HTMLDivElement>(null);
   const catalog = [
     ...editionProducts.map((p) => resolveProduct(p, edition)),
     ...extraProducts,
   ];
 
+  useEffect(() => {
+    carouselRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
+  }, [edition]);
+
   return (
-    <section id="products" className="relative overflow-hidden bg-ink-900 py-20 sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
+    <section id="products" className="relative bg-ink-900 py-20 sm:py-28 border-t border-zinc-800/60 my-4 sm:my-8">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-900" />
       <div className="pointer-events-none absolute -top-20 right-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
@@ -158,7 +195,10 @@ export function ProductsSection() {
                 type="button"
                 role="tab"
                 aria-selected={edition === opt.id}
-                onClick={() => setEdition(opt.id)}
+                onClick={() => {
+                  setEdition(opt.id);
+                  carouselRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
+                }}
                 className={`rounded-full px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider transition-all sm:px-7 sm:text-sm ${
                   edition === opt.id
                     ? 'bg-white text-ink-950 shadow-neon'
@@ -180,12 +220,14 @@ export function ProductsSection() {
           ← Swipe to view sizes →
         </p>
 
-        <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-8 pt-2 no-scrollbar sm:grid sm:grid-cols-2 sm:gap-7 sm:overflow-x-visible lg:grid-cols-3">
-          {catalog.map((p, i) => (
+        <div
+          ref={carouselRef}
+          className="mt-10 flex min-w-0 w-full max-w-full snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pb-8 pt-2 no-scrollbar touch-pan-x sm:grid sm:grid-cols-2 sm:gap-7 sm:overflow-x-visible sm:touch-auto lg:grid-cols-3"
+        >
+          {catalog.map((p) => (
             <article
               key={`${edition}-${p.name}-${p.size}`}
-              className="reveal card-interactive glass-card group relative min-w-[82vw] max-w-[310px] shrink-0 snap-center overflow-hidden rounded-4xl p-7 transform-gpu will-change-transform transition-all duration-500 hover:-translate-y-2 hover:border-slate-500/60 sm:min-w-0 sm:max-w-none sm:shrink"
-              data-delay={String((i % 3) * 100)}
+              className={cardShell}
             >
               {p.badge && (
                 <span className="absolute right-4 top-4 z-10 max-w-[9.5rem] rounded-full border border-white/40 bg-ink-950 px-2.5 py-1 text-center text-[10px] font-bold uppercase leading-tight tracking-wide text-white neon-glow sm:max-w-[11rem] sm:text-xs">
@@ -193,26 +235,7 @@ export function ProductsSection() {
                 </span>
               )}
 
-              <div className="relative mx-auto flex h-72 items-center justify-center py-4 sm:h-80">
-                <div className="bottle-glow absolute h-60 w-60 rounded-full opacity-85 transition-all group-hover:scale-110 group-hover:opacity-100 sm:h-64 sm:w-64" />
-                {p.image ? (
-                  <img
-                    src={p.image}
-                    alt={`AquaLab ${p.name} ${edition} edition (${p.size})`}
-                    className="relative z-10 h-64 w-auto max-w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 sm:h-72"
-                  />
-                ) : p.bottle === 'dispenser' ? (
-                  <DispenserBottle className="relative z-10 h-60 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 sm:h-68" />
-                ) : (
-                  <WaterBottle
-                    variant={p.variant}
-                    className="relative z-10 h-64 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 sm:h-72"
-                    label={p.custom?.label}
-                    sublabel={p.custom?.sublabel}
-                    customLabelColor={p.custom?.customLabelColor}
-                  />
-                )}
-              </div>
+              <ProductVisual product={p} edition={edition} />
 
               <div className="mt-2">
                 <span className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white">
@@ -239,10 +262,7 @@ export function ProductsSection() {
             </article>
           ))}
 
-          <div
-            className="reveal card-interactive glass-card group relative flex min-w-[82vw] max-w-[310px] shrink-0 snap-center flex-col items-center justify-center overflow-hidden rounded-4xl p-8 text-center text-white transform-gpu will-change-transform transition-all duration-500 hover:-translate-y-2 sm:min-w-0 sm:max-w-none sm:shrink"
-            data-delay="200"
-          >
+          <div className={`${cardShell} flex flex-col items-center justify-center text-center text-white`}>
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-white/5 blur-2xl" />
             <h3 className="display-head relative text-3xl text-white sm:text-4xl">Can't See Your Size?</h3>
